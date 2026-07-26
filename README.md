@@ -212,7 +212,7 @@ Suggestions and fixes are welcome: open an issue, or fork the repo, create a bra
 <table>
 <tr><td><b>Company</b></td><td>Bharat Infra Associates (BIA)</td></tr>
 <tr><td><b>Managing Director</b></td><td>Bundan Khan</td></tr>
-<tr><td><b>Head Office</b></td><td>8-51, First Floor, Joshi Colony, Mandawali, East Delhi, Delhi 110092, India</td></tr>
+<tr><td><b>Head Office</b></td><td>B-49, 3rd Floor, Mehtab Complex, Joshi Colony, IP Extension, Delhi 110092, India</td></tr>
 <tr><td><b>Phone</b></td><td><a href="tel:+919818742322">+91 98187 42322</a></td></tr>
 <tr><td><b>Email</b></td><td><a href="mailto:procurement@bharatinfrassociate.com">procurement@bharatinfrassociate.com</a></td></tr>
 <tr><td><b>Website</b></td><td><a href="https://www.bharatinfrassociate.com/">www.bharatinfrassociate.com</a></td></tr>
