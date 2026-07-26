@@ -82,8 +82,6 @@
       }],
       "areaServed": [
         { "@type": "Country", "name": "India" },
-        { "@type": "State", "name": "Bihar" },
-        { "@type": "State", "name": "Jharkhand" },
         { "@type": "State", "name": "Delhi" }
       ],
       "knowsAbout": [
@@ -331,10 +329,11 @@ h1,h2,h3,.u-display{font-family:var(--f-display); font-weight:700; letter-spacin
    ============================================================ */
 .hero{
   position:relative; margin-top:calc(var(--hdr-h) * -1);
+  background:url("/Solar_Power_Plant.jpeg") center/cover no-repeat;
   min-height:min(94vh,860px); min-height:min(94svh,860px);
   display:flex; isolation:isolate;
 }
-.hero__canvas{position:absolute; inset:0; width:100%; height:100%; z-index:-2}
+.hero__canvas{display:none}
 .hero__scrim{
   position:absolute; inset:0; z-index:-1;
   background:
@@ -855,7 +854,7 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
   <div class="hero__foot">
     <ul>
       <li>100+ projects completed</li>
-      <li>Bihar · Jharkhand · Pan-India</li>
+      <li>Pan-India</li>
       <li>Head office — East Delhi</li>
       <li>In-house crews</li>
     </ul>
@@ -1123,10 +1122,20 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
                 <span class="leader__r">Surveyor Team Head</span>
               </span>
             </div>
-            <p class="leaders__note">
-              Supported by a dedicated Financial Advisor and Project Manager overseeing
-              commercial control and site delivery.
-            </p>
+            <div class="leader">
+              <span class="leader__m">FK</span>
+              <span>
+                <span class="leader__n">Mr. Fardeen Khan</span>
+                <span class="leader__r">Project Manager</span>
+              </span>
+            </div>
+            <div class="leader">
+              <span class="leader__m">AP</span>
+              <span>
+                <span class="leader__n">Adv. Mr. Amit Panarikh</span>
+                <span class="leader__r">Financial Advisor</span>
+              </span>
+            </div>
           </div>
         </div>
 
