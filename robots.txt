@@ -1,0 +1,8 @@
+# Bharat Infra Associates
+# Canonical host: https://www.bharatinfrassociate.com
+# The bare domain should 301-redirect to www so both forms do not get indexed.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.bharatinfrassociate.com/sitemap.xml
