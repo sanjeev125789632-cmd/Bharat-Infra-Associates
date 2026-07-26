@@ -1379,7 +1379,8 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
         </div>
       </div>
 
-      <form class="form rv" id="form" novalidate style="--d:100ms">
+      <form class="form rv" id="form" action="https://api.web3forms.com/submit" method="POST" novalidate style="--d:100ms">
+        <input type="hidden" name="access_key" value="c860af1e-516f-492f-acef-2ffc346421f4">
         <div class="field field--full">
           <label for="f-name">Full Name <b>*</b></label>
           <input type="text" id="f-name" name="name" placeholder="Your full name" autocomplete="name" required>
@@ -1700,11 +1701,28 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
       "Company: " + (comp.value.trim() || "—") + "\n\n" +
       "Comments:\n" + msg.value.trim() + "\n";
 
-    window.location.href = "mailto:procurement@bharatinfrassociate.com"
-      + "?subject=" + encodeURIComponent(subject)
-      + "&body=" + encodeURIComponent(body);
-
-    okBox.classList.add("is-on");
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        access_key: "c860af1e-516f-492f-acef-2ffc346421f4",
+        subject: subject,
+        name: name.value.trim(),
+        phone: "+91 " + digits,
+        email: email.value.trim(),
+        company: comp.value.trim() || "—",
+        message: body
+      })
+    }).then(function(r){ return r.json(); }).then(function(data){
+      if (data.success) {
+        okBox.classList.add("is-on");
+        form.reset();
+      } else {
+        alert("Sorry, something went wrong. Please email procurement@bharatinfrassociate.com");
+      }
+    }).catch(function(){
+      alert("Sorry, something went wrong. Please email procurement@bharatinfrassociate.com");
+    });
   });
 
   form.addEventListener("input", function(e){
