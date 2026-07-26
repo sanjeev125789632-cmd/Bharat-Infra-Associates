@@ -169,7 +169,6 @@
   --fs-lead:clamp(1.02rem,1.35vw,1.19rem);
   --fs-stat:clamp(3rem,6.4vw,5rem);
 
-  --rail:58px;
   --pad:clamp(20px,5vw,64px);
   --maxw:1280px;
   --hdr-h:76px;
@@ -240,35 +239,6 @@ button,input,textarea,select{font:inherit; color:inherit}
 :focus-visible{outline:2px solid var(--blue); outline-offset:3px; border-radius:2px}
 
 h1,h2,h3,.u-display{font-family:var(--f-display); font-weight:700; letter-spacing:-.015em; text-wrap:balance}
-
-/* ============================================================
-   LEFT TECHNICAL RAIL  (drawing-sheet datum)
-   ============================================================ */
-.rail{display:none !important}
-@media (min-width:1180px){
-  .rail{
-    display:block; position:fixed; inset:0 auto 0 0; width:var(--rail); z-index:60;
-    border-right:1px solid var(--line); background:var(--bg); pointer-events:none;
-  }
-  .rail__ticks{position:absolute; inset:0; left:auto; right:0; width:11px}
-  .rail__ticks i{position:absolute; right:0; height:1px; width:6px; background:var(--line-2); opacity:.85}
-  .rail__ticks i.maj{width:11px; background:var(--faint)}
-  .rail__prog{
-    position:absolute; right:-1px; top:0; width:2px; height:0;
-    background:var(--grad-v); background-size:100% 100vh;
-  }
-  .rail__code{
-    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) rotate(-90deg);
-    transform-origin:center; white-space:nowrap;
-    font-family:var(--f-mono); font-size:10.5px; letter-spacing:.24em; text-transform:uppercase;
-    color:var(--muted); transition:color .4s ease;
-  }
-  .rail__mark{
-    position:absolute; left:0; right:0; bottom:18px; text-align:center;
-    font-family:var(--f-mono); font-size:9.5px; letter-spacing:.16em; color:var(--faint);
-  }
-  .page{padding-left:0}
-}
 
 /* ============================================================
    HEADER
@@ -813,14 +783,6 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
   </defs>
 </svg>
 
-<!-- ===== LEFT RAIL ===== -->
-<aside class="rail" aria-hidden="true">
-  <div class="rail__ticks" id="ticks"></div>
-  <div class="rail__prog" id="prog"></div>
-  <div class="rail__code" id="railCode">SHT 01 — COVER</div>
-  <div class="rail__mark">BIA</div>
-</aside>
-
 <div class="page">
 
 <a class="skip" href="#main">Skip to content</a>
@@ -869,7 +831,7 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
 <main id="main">
 
 <!-- ===== HERO ===== -->
-<section class="hero" id="top" data-code="SHT 01 — COVER">
+<section class="hero" id="top">
   <canvas class="hero__canvas" id="heroCanvas" aria-label="Aerial view of a ground-mount solar array with telecom towers on the horizon" role="img"></canvas>
   <div class="hero__scrim"></div>
 
@@ -901,7 +863,7 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
 </section>
 
 <!-- ===== TRACK RECORD ===== -->
-<section class="sec" id="projects" data-code="SHT 02 — TRACK RECORD">
+<section class="sec" id="projects">
   <div class="wrap">
     <div class="track">
       <div class="track__copy rv">
@@ -953,7 +915,7 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
 </section>
 
 <!-- ===== BUSINESS AREAS ===== -->
-<section class="sec sec--tint" id="areas" data-code="SHT 03 — BUSINESS AREAS">
+<section class="sec sec--tint" id="areas">
   <div class="wrap">
     <div class="sec__head rv">
       <p class="eyebrow"><span class="rule" aria-hidden="true"></span>Business Areas <b>/ 03</b></p>
@@ -1109,7 +1071,7 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
 </section>
 
 <!-- ===== ABOUT ===== -->
-<section class="sec" id="about" data-code="SHT 04 — ABOUT US">
+<section class="sec" id="about">
   <div class="wrap">
     <div class="sec__head rv">
       <p class="eyebrow"><span class="rule" aria-hidden="true"></span>About Us <b>/ 04</b></p>
@@ -1308,7 +1270,7 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
 </section>
 
 <!-- ===== CULTURE ===== -->
-<section class="sec sec--tint" id="culture" data-code="SHT 05 — CULTURE">
+<section class="sec sec--tint" id="culture">
   <div class="wrap">
     <div class="sec__head rv">
       <p class="eyebrow"><span class="rule" aria-hidden="true"></span>Culture <b>/ 05</b></p>
@@ -1348,7 +1310,7 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
 </section>
 
 <!-- ===== CLIENTELE ===== -->
-<section class="sec" id="clients" data-code="SHT 06 — CLIENTELE">
+<section class="sec" id="clients">
   <div class="wrap">
     <div class="sec__head rv">
       <p class="eyebrow"><span class="rule" aria-hidden="true"></span>Clientele <b>/ 06</b></p>
@@ -1370,7 +1332,7 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
 </section>
 
 <!-- ===== CONTACT ===== -->
-<section class="sec sec--tint" id="contact" data-code="SHT 07 — CONTACT">
+<section class="sec sec--tint" id="contact">
   <div class="wrap">
     <div class="contact">
       <div class="contact__info rv">
@@ -1478,7 +1440,7 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
 </main>
 
 <!-- ===== FOOTER ===== -->
-<footer class="ftr" data-code="SHT 08 — CONTACT DETAILS">
+<footer class="ftr">
   <div class="wrap">
     <div class="ftr__grid">
       <div class="ftr__brand-col">
@@ -1689,43 +1651,6 @@ html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
     });
   });
   selectYear(0);
-
-  /* ---------- rail: ticks, progress, active sheet code ---------- */
-  var ticks = document.getElementById("ticks");
-  if (ticks){
-    var frag = document.createDocumentFragment();
-    for (var t = 0; t <= 40; t++){
-      var i = document.createElement("i");
-      i.style.top = (t * 2.5) + "%";
-      if (t % 4 === 0) i.className = "maj";
-      frag.appendChild(i);
-    }
-    ticks.appendChild(frag);
-  }
-  var prog = document.getElementById("prog");
-  var railCode = document.getElementById("railCode");
-  var coded = Array.prototype.slice.call(document.querySelectorAll("[data-code]"));
-
-  function onRail(){
-    if (prog){
-      var h = document.documentElement.scrollHeight - window.innerHeight;
-      var p = h > 0 ? (window.scrollY / h) : 0;
-      prog.style.height = Math.min(Math.max(p, 0), 1) * 100 + "%";
-    }
-    if (railCode){
-      var mid = window.innerHeight * 0.34, best = coded[0];
-      for (var k = 0; k < coded.length; k++){
-        if (coded[k].getBoundingClientRect().top <= mid) best = coded[k];
-      }
-      if (best){
-        var c = best.getAttribute("data-code");
-        if (railCode.textContent !== c) railCode.textContent = c;
-      }
-    }
-  }
-  window.addEventListener("scroll", onRail, {passive:true});
-  window.addEventListener("resize", onRail);
-  onRail();
 
   /* ---------- nav active link ---------- */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
