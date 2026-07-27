@@ -713,6 +713,78 @@ h1,h2,h3,.u-display{font-family:var(--f-display); font-weight:700; letter-spacin
   .rv{opacity:1; transform:none}
 }
 html{scroll-behavior:smooth; scroll-padding-top:calc(var(--hdr-h) + 20px)}
+
+/* ============================================================
+   MOBILE OPTIMISATION  —  Android + iOS
+   ============================================================ */
+
+/* --- no sideways scrolling, ever --- */
+html{overflow-x:clip}
+body{overflow-x:clip}
+img,svg,video,canvas,iframe,table{max-width:100%}
+
+/* --- snappier taps: no grey flash, no 300ms delay --- */
+a,button,summary,label,input,select,textarea,[role="button"]{
+  -webkit-tap-highlight-color:transparent; touch-action:manipulation;
+}
+
+/* --- momentum + snap for the horizontal strips --- */
+.tabs,.tl__years{
+  -webkit-overflow-scrolling:touch; overscroll-behavior-x:contain;
+  scroll-snap-type:x proximity; scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar,.tl__years::-webkit-scrollbar{width:0;height:0;display:none}
+.tab,.tl__y{scroll-snap-align:start}
+
+/* --- iPhone notch / Dynamic Island / home indicator --- */
+@supports (padding:max(0px)){
+  .hdr__in,.mnav,.hero__in,.wrap,.hero__foot ul{
+    padding-left:max(var(--pad),env(safe-area-inset-left));
+    padding-right:max(var(--pad),env(safe-area-inset-right));
+  }
+  .ftr__bar{padding-bottom:max(26px,env(safe-area-inset-bottom))}
+}
+
+/* --- real viewport height on mobile browsers --- */
+@supports (height:100dvh){ .hero{min-height:min(94dvh,860px)} }
+
+@media (max-width:1000px){
+  .mnav{
+    max-height:calc(100vh - var(--hdr-h) - 8px);
+    max-height:calc(100dvh - var(--hdr-h) - 8px);
+    overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch;
+  }
+  html:has(.mnav.is-open),body:has(.mnav.is-open){overflow:hidden}
+}
+
+@media (max-width:720px){
+  /* the hero strip used to become a squeezed flex item and pushed
+     the whole page sideways on phones */
+  .hero{flex-direction:column; justify-content:flex-end}
+  .hero__foot{width:100%; flex:0 0 auto}
+  .hero__foot ul{gap:8px 18px}
+
+  /* 44px touch targets */
+  .ftr__map a,.ftr__addr a{display:inline-flex; align-items:center; min-height:44px}
+  .ftr__soc a{min-width:44px; min-height:44px}
+  .pill{min-height:48px}
+  .mnav a{min-height:48px; display:flex; align-items:center}
+}
+
+/* --- phone held sideways --- */
+@media (max-width:900px) and (orientation:landscape) and (max-height:520px){
+  .hero{min-height:auto}
+  .hero__in{padding-top:calc(var(--hdr-h) + 28px); padding-bottom:44px}
+}
+
+/* --- very small Android phones --- */
+@media (max-width:360px){
+  .brand__name{font-size:13.5px; letter-spacing:.04em}
+  .brand__sub{font-size:8px; letter-spacing:.16em}
+  .brand__mark{width:36px; height:36px}
+  .hdr__in{gap:12px}
+}
+
 </style>
 </head>
 <body>
