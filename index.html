@@ -785,6 +785,93 @@ a,button,summary,label,input,select,textarea,[role="button"]{
   .hdr__in{gap:12px}
 }
 
+
+/* ============================================================
+   GALLERY PAGE
+   ============================================================ */
+.gsec{padding:clamp(56px,7vw,96px) 0 clamp(72px,9vw,120px)}
+.gal__bar .chips{flex:1 1 300px; min-width:0}
+.gal__bar{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px 24px; margin-bottom:clamp(20px,2.6vw,30px)}
+.gal__count{font-family:var(--f-mono); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--faint)}
+
+.chips{display:flex; gap:10px; overflow-x:auto; padding:2px 0 6px; scrollbar-width:none; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; overscroll-behavior-x:contain}
+.chips::-webkit-scrollbar{width:0; height:0; display:none}
+.chip{flex:0 0 auto; scroll-snap-align:start; display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 18px;
+  border:1px solid var(--line-2); border-radius:999px; background:var(--bg); color:var(--ink-2); cursor:pointer;
+  font-family:var(--f-mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
+  transition:background .25s ease, border-color .25s ease, color .25s ease}
+.chip b{font-weight:400; opacity:.55}
+.chip:hover{border-color:var(--ink-2); color:var(--ink)}
+.chip.is-on{background:var(--ink); border-color:var(--ink); color:var(--bg)}
+.chip.is-on b{opacity:.6}
+
+/* wide screens: let the chips wrap instead of hiding behind a scroller */
+@media (min-width:840px){
+  .chips{flex-wrap:wrap; overflow:visible}
+}
+
+.gal{display:grid; gap:clamp(10px,1.4vw,18px); grid-template-columns:repeat(auto-fill,minmax(min(100%,232px),1fr))}
+.gal__item{position:relative; display:block; width:100%; margin:0; padding:0; border:0; cursor:zoom-in; -webkit-appearance:none; appearance:none; font:inherit; color:inherit;
+  aspect-ratio:4/5; overflow:hidden; border-radius:12px; background:var(--surface-2)}
+.gal__item img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.gal__item:hover img{transform:scale(1.05)}
+.gal__item::after{content:""; position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .3s ease;
+  background:linear-gradient(180deg,rgba(7,13,19,0) 42%,rgba(7,13,19,.72) 100%)}
+.gal__item:hover::after,.gal__item:focus-visible::after{opacity:1}
+.gal__cap{position:absolute; left:0; right:0; bottom:0; z-index:2; pointer-events:none; text-align:left;
+  padding:14px 14px 13px; color:#fff; font-family:var(--f-mono); font-size:9.5px; letter-spacing:.14em;
+  text-transform:uppercase; line-height:1.5; opacity:0; transform:translateY(6px); transition:opacity .3s ease, transform .3s ease}
+.gal__item:hover .gal__cap,.gal__item:focus-visible .gal__cap{opacity:1; transform:none}
+.gal__item.is-hidden{display:none}
+.gal__none{padding:40px 0; color:var(--muted)}
+
+/* touch devices have no hover, so keep the caption visible */
+@media (hover:none){
+  .gal__item::after{opacity:1}
+  .gal__cap{opacity:1; transform:none}
+}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed; inset:0; z-index:200; display:none; background:rgba(7,13,19,.97);
+  -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px)}
+.lb.is-on{display:grid; grid-template-rows:auto minmax(0,1fr) auto}
+.lb__top{display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:max(14px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 12px max(16px,env(safe-area-inset-left));
+  font-family:var(--f-mono); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.62)}
+.lb__stage{position:relative; display:grid; place-items:center; min-height:0; padding:0 6px}
+.lb__img{max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; border-radius:8px;
+  box-shadow:0 30px 80px -30px rgba(0,0,0,.8); opacity:0; transition:opacity .3s ease}
+.lb__img.is-ready{opacity:1}
+.lb__foot{padding:14px max(16px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));
+  text-align:center; color:#fff}
+.lb__cap{font-family:var(--f-display); font-size:15px; font-weight:600; line-height:1.35}
+.lb__sub{margin-top:5px; font-family:var(--f-mono); font-size:9.5px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.5)}
+.lb__btn{display:grid; place-items:center; width:46px; height:46px; flex:none; border-radius:50%;
+  border:1px solid rgba(255,255,255,.26); background:rgba(255,255,255,.08); color:#fff; cursor:pointer; padding:0;
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); transition:background .25s ease, border-color .25s ease, transform .25s ease}
+.lb__btn:hover{background:rgba(255,255,255,.2); border-color:rgba(255,255,255,.55)}
+.lb__btn:active{transform:scale(.94)}
+.lb__btn svg{width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.lb__nav{position:absolute; top:50%; transform:translateY(-50%); z-index:3}
+.lb__nav--prev{left:8px}
+.lb__nav--next{right:8px}
+.lb__nav:active{transform:translateY(-50%) scale(.94)}
+
+@media (max-width:720px){
+  .gal{grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px}
+  .gal__cap{font-size:9px; padding:11px 10px 10px; letter-spacing:.1em}
+  .lb__cap{font-size:14px}
+  .lb__nav--prev{left:4px}
+  .lb__nav--next{right:4px}
+  .lb__btn{width:44px; height:44px}
+}
+@media (max-width:380px){
+  .gal{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .gal__item img{transition:none}
+  .gal__item:hover img{transform:none}
+}
 </style>
 </head>
 <body>
@@ -876,7 +963,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
       <a href="#areas">Business Areas</a>
       <a href="#milestones">News</a>
       <a href="#culture">Culture</a>
-      <a href="gallery.html">Gallery</a>
+      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -897,7 +984,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
     <a href="#areas">Business Areas</a>
     <a href="#milestones">News</a>
     <a href="#culture">Culture</a>
-    <a href="gallery.html">Gallery</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -1415,12 +1502,147 @@ a,button,summary,label,input,select,textarea,[role="button"]{
   </div>
 </section>
 
+<!-- ===== GALLERY ===== -->
+<section class="sec gsec" id="gallery">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <p class="eyebrow"><span class="rule" aria-hidden="true"></span>Gallery <b>/ 07</b></p>
+      <h2>Work in progress, and work handed over.</h2>
+      <p>
+        Photographs recorded by our own supervisors as the work went in &mdash; foundations and civil
+        works, structure erection, electrical and plant. Tap any photograph to open it full screen.
+      </p>
+    </div>
+
+    <div class="gal__bar rv">
+      <div class="chips" role="group" aria-label="Filter photographs by category">
+      <button class="chip is-on" type="button" data-cat="all" aria-pressed="true">All Photographs <b>27</b></button>
+      <button class="chip" type="button" data-cat="civil" aria-pressed="false">Civil &amp; Foundations <b>8</b></button>
+      <button class="chip" type="button" data-cat="structures" aria-pressed="false">Structures &amp; Erection <b>11</b></button>
+      <button class="chip" type="button" data-cat="plant" aria-pressed="false">Plant &amp; Electrical <b>8</b></button>
+      </div>
+      <p class="gal__count" id="galCount" role="status">27 photographs</p>
+    </div>
+
+    <div class="gal" id="gal">
+      <button class="gal__item rv" type="button" data-i="0" data-cat="civil" data-src="Equipment_plinths_trenching_ducting_2K_202607271048.jpeg" data-cap="Trenching and cable ducting" data-alt="HDPE cable ducts laid in an excavated trench between concrete equipment plinths" style="--d:0ms" aria-label="Open photograph: Trenching and cable ducting">
+        <img src="Equipment_plinths_trenching_ducting_2K_202607271048.jpeg" width="2752" height="1536" alt="HDPE cable ducts laid in an excavated trench between concrete equipment plinths" loading="eager" decoding="async" fetchpriority="high">
+        <span class="gal__cap">Trenching and cable ducting</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="1" data-cat="plant" data-src="Ground-mount_rooftop_solar_plants_2K_202607271047.jpeg" data-cap="Ground-mount plant, aerial view" data-alt="Aerial view of a completed ground-mount solar plant at first light" style="--d:45ms" aria-label="Open photograph: Ground-mount plant, aerial view">
+        <img src="Ground-mount_rooftop_solar_plants_2K_202607271047.jpeg" width="2752" height="1536" alt="Aerial view of a completed ground-mount solar plant at first light" loading="eager" decoding="async" fetchpriority="high">
+        <span class="gal__cap">Ground-mount plant, aerial view</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="2" data-cat="plant" data-src="Module_cleaning_thermography_2K_202607271050.jpeg" data-cap="Module cleaning and thermography" data-alt="Site team running a drone thermography survey across solar module rows" style="--d:90ms" aria-label="Open photograph: Module cleaning and thermography">
+        <img src="Module_cleaning_thermography_2K_202607271050.jpeg" width="2752" height="1536" alt="Site team running a drone thermography survey across solar module rows" loading="eager" decoding="async" fetchpriority="high">
+        <span class="gal__cap">Module cleaning and thermography</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="3" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.54.jpeg" data-cap="Module mounting structure set-out" data-alt="Galvanised module mounting structure posts set out across a field" style="--d:135ms" aria-label="Open photograph: Module mounting structure set-out">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.54.jpeg" width="1280" height="720" alt="Galvanised module mounting structure posts set out across a field" loading="lazy" decoding="async">
+        <span class="gal__cap">Module mounting structure set-out</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="4" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.55%20(1).jpeg" data-cap="Posts along the cable route" data-alt="Line of galvanised mounting posts running beside an open cable trench" style="--d:180ms" aria-label="Open photograph: Posts along the cable route">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.55%20(1).jpeg" width="572" height="1280" alt="Line of galvanised mounting posts running beside an open cable trench" loading="lazy" decoding="async">
+        <span class="gal__cap">Posts along the cable route</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="5" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.55%20(2).jpeg" data-cap="Equipment room brickwork" data-alt="Masons raising brickwork for an equipment room on a cast RCC plinth" style="--d:225ms" aria-label="Open photograph: Equipment room brickwork">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.55%20(2).jpeg" width="1280" height="960" alt="Masons raising brickwork for an equipment room on a cast RCC plinth" loading="lazy" decoding="async">
+        <span class="gal__cap">Equipment room brickwork</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="6" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.55.jpeg" data-cap="Boundary fencing" data-alt="Chain-link boundary fence post grouted into a concrete base at the site edge" style="--d:270ms" aria-label="Open photograph: Boundary fencing">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.55.jpeg" width="720" height="1280" alt="Chain-link boundary fence post grouted into a concrete base at the site edge" loading="lazy" decoding="async">
+        <span class="gal__cap">Boundary fencing</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="7" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.56%20(1).jpeg" data-cap="Completed module table" data-alt="Completed module table mounted on a galvanised support structure" style="--d:315ms" aria-label="Open photograph: Completed module table">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.56%20(1).jpeg" width="520" height="1156" alt="Completed module table mounted on a galvanised support structure" loading="lazy" decoding="async">
+        <span class="gal__cap">Completed module table</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="8" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.56.jpeg" data-cap="Structure assembly on site" data-alt="Module mounting structure frame assembled on the ground with a piling rig working behind" style="--d:0ms" aria-label="Open photograph: Structure assembly on site">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.56.jpeg" width="960" height="1280" alt="Module mounting structure frame assembled on the ground with a piling rig working behind" loading="lazy" decoding="async">
+        <span class="gal__cap">Structure assembly on site</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="9" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.57%20(1).jpeg" data-cap="Transformer and inverter yard" data-alt="Transformer and inverter equipment installed under a canopy in the plant yard" style="--d:45ms" aria-label="Open photograph: Transformer and inverter yard">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.57%20(1).jpeg" width="1040" height="468" alt="Transformer and inverter equipment installed under a canopy in the plant yard" loading="lazy" decoding="async">
+        <span class="gal__cap">Transformer and inverter yard</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="10" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.57.jpeg" data-cap="Inverter skids and control room" data-alt="Inverter skids and control equipment behind the plant yard fencing" style="--d:90ms" aria-label="Open photograph: Inverter skids and control room">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.57.jpeg" width="520" height="1156" alt="Inverter skids and control equipment behind the plant yard fencing" loading="lazy" decoding="async">
+        <span class="gal__cap">Inverter skids and control room</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="11" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.58%20(1).jpeg" data-cap="Post grouted into pile cap" data-alt="Galvanised structure post grouted into a cast concrete pile cap" style="--d:135ms" aria-label="Open photograph: Post grouted into pile cap">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.58%20(1).jpeg" width="960" height="1280" alt="Galvanised structure post grouted into a cast concrete pile cap" loading="lazy" decoding="async">
+        <span class="gal__cap">Post grouted into pile cap</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="12" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.58%20(2).jpeg" data-cap="Tracker bearing assembly" data-alt="Tracker bearing housing bolted to the head of a driven pile" style="--d:180ms" aria-label="Open photograph: Tracker bearing assembly">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.58%20(2).jpeg" width="1200" height="1600" alt="Tracker bearing housing bolted to the head of a driven pile" loading="lazy" decoding="async">
+        <span class="gal__cap">Tracker bearing assembly</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="13" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.58.jpeg" data-cap="Auger piling for foundations" data-alt="Hydraulic auger rig boring foundation holes in red site soil" style="--d:225ms" aria-label="Open photograph: Auger piling for foundations">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.58.jpeg" width="780" height="1040" alt="Hydraulic auger rig boring foundation holes in red site soil" loading="lazy" decoding="async">
+        <span class="gal__cap">Auger piling for foundations</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="14" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.59%20(1).jpeg" data-cap="Tracker bearing, front elevation" data-alt="Front view of a tracker bearing housing seated on a galvanised pile" style="--d:270ms" aria-label="Open photograph: Tracker bearing, front elevation">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.59%20(1).jpeg" width="1200" height="1600" alt="Front view of a tracker bearing housing seated on a galvanised pile" loading="lazy" decoding="async">
+        <span class="gal__cap">Tracker bearing, front elevation</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="15" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.59.jpeg" data-cap="Bearing baseplate and bolting" data-alt="Close view of the tracker bearing baseplate and bolted connection" style="--d:315ms" aria-label="Open photograph: Bearing baseplate and bolting">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.59.jpeg" width="1200" height="1600" alt="Close view of the tracker bearing baseplate and bolted connection" loading="lazy" decoding="async">
+        <span class="gal__cap">Bearing baseplate and bolting</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="16" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.00%20(1).jpeg" data-cap="Torque tube damper clamp" data-alt="Damper clamp fixed to the torque tube of a tracker row" style="--d:0ms" aria-label="Open photograph: Torque tube damper clamp">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.00%20(1).jpeg" width="1200" height="1600" alt="Damper clamp fixed to the torque tube of a tracker row" loading="lazy" decoding="async">
+        <span class="gal__cap">Torque tube damper clamp</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="17" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.00%20(2).jpeg" data-cap="Torque tube bolted splice" data-alt="Bolted splice plate joining two lengths of tracker torque tube" style="--d:45ms" aria-label="Open photograph: Torque tube bolted splice">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.00%20(2).jpeg" width="1200" height="1600" alt="Bolted splice plate joining two lengths of tracker torque tube" loading="lazy" decoding="async">
+        <span class="gal__cap">Torque tube bolted splice</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="18" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.00.jpeg" data-cap="Torque tube bearing clamp" data-alt="Torque tube seated in its bearing clamp on the support post" style="--d:90ms" aria-label="Open photograph: Torque tube bearing clamp">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.00.jpeg" width="1200" height="1600" alt="Torque tube seated in its bearing clamp on the support post" loading="lazy" decoding="async">
+        <span class="gal__cap">Torque tube bearing clamp</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="19" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.01%20(1).jpeg" data-cap="Internal access track" data-alt="Internal access track running between completed module rows" style="--d:135ms" aria-label="Open photograph: Internal access track">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.01%20(1).jpeg" width="720" height="1280" alt="Internal access track running between completed module rows" loading="lazy" decoding="async">
+        <span class="gal__cap">Internal access track</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="20" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.01.jpeg" data-cap="Completed rows at dusk" data-alt="View beneath completed module rows at dusk" style="--d:180ms" aria-label="Open photograph: Completed rows at dusk">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.01.jpeg" width="1600" height="900" alt="View beneath completed module rows at dusk" loading="lazy" decoding="async">
+        <span class="gal__cap">Completed rows at dusk</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="21" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.02%20(1).jpeg" data-cap="Inverter row, site record" data-alt="Site record photograph of the inverter row at the plant" style="--d:225ms" aria-label="Open photograph: Inverter row, site record">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.02%20(1).jpeg" width="720" height="1600" alt="Site record photograph of the inverter row at the plant" loading="lazy" decoding="async">
+        <span class="gal__cap">Inverter row, site record</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="22" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.02%20(2).jpeg" data-cap="Table assembly by site crew" data-alt="Site crew assembling module tables and torque tubes on the ground" style="--d:270ms" aria-label="Open photograph: Table assembly by site crew">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.02%20(2).jpeg" width="1065" height="612" alt="Site crew assembling module tables and torque tubes on the ground" loading="lazy" decoding="async">
+        <span class="gal__cap">Table assembly by site crew</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="23" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.02.jpeg" data-cap="Completed rows on precast posts" data-alt="Completed module rows carried on precast concrete posts at dusk" style="--d:315ms" aria-label="Open photograph: Completed rows on precast posts">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.02.jpeg" width="720" height="1280" alt="Completed module rows carried on precast concrete posts at dusk" loading="lazy" decoding="async">
+        <span class="gal__cap">Completed rows on precast posts</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="24" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.03%20(1).jpeg" data-cap="Precast foundation posts" data-alt="Rows of precast concrete foundation posts installed across the site" style="--d:0ms" aria-label="Open photograph: Precast foundation posts">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.03%20(1).jpeg" width="867" height="1156" alt="Rows of precast concrete foundation posts installed across the site" loading="lazy" decoding="async">
+        <span class="gal__cap">Precast foundation posts</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="25" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.03%20(2).jpeg" data-cap="Precast posts and excavation" data-alt="Precast concrete posts in position with excavated spoil alongside" style="--d:45ms" aria-label="Open photograph: Precast posts and excavation">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.03%20(2).jpeg" width="867" height="1156" alt="Precast concrete posts in position with excavated spoil alongside" loading="lazy" decoding="async">
+        <span class="gal__cap">Precast posts and excavation</span>
+      </button>
+      <button class="gal__item rv" type="button" data-i="26" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.03.jpeg" data-cap="Precast post, grouted base" data-alt="Close view of a precast concrete post grouted at its base" style="--d:90ms" aria-label="Open photograph: Precast post, grouted base">
+        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.03.jpeg" width="867" height="1156" alt="Close view of a precast concrete post grouted at its base" loading="lazy" decoding="async">
+        <span class="gal__cap">Precast post, grouted base</span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CONTACT ===== -->
 <section class="sec sec--tint" id="contact">
   <div class="wrap">
     <div class="contact">
       <div class="contact__info rv">
-        <p class="eyebrow"><span class="rule" aria-hidden="true"></span>Contact <b>/ 07</b></p>
+        <p class="eyebrow"><span class="rule" aria-hidden="true"></span>Contact <b>/ 08</b></p>
         <h2>Tell us about the scope.</h2>
         <p>Send the site details and we will come back with a view on programme and price.</p>
 
@@ -1567,7 +1789,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
           <a href="#areas">Business Areas</a>
           <a href="#milestones">News</a>
           <a href="#culture">Culture</a>
-          <a href="gallery.html">Gallery</a>
+          <a href="#gallery">Gallery</a>
           <a href="#clients">Clientele</a>
           <a href="#contact">Contact</a>
         </div>
@@ -1594,6 +1816,29 @@ a,button,summary,label,input,select,textarea,[role="button"]{
 </footer>
 
 </div><!-- /.page -->
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photograph viewer" aria-hidden="true">
+  <div class="lb__top">
+    <span id="lbNum">1 / 27</span>
+    <button class="lb__btn" id="lbClose" type="button" aria-label="Close viewer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="lb__stage">
+    <button class="lb__btn lb__nav lb__nav--prev" id="lbPrev" type="button" aria-label="Previous photograph">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <img class="lb__img" id="lbImg" alt="">
+    <button class="lb__btn lb__nav lb__nav--next" id="lbNext" type="button" aria-label="Next photograph">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <div class="lb__foot">
+    <p class="lb__cap" id="lbCap"></p>
+    <p class="lb__sub" id="lbSub"></p>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -2043,6 +2288,100 @@ a,button,summary,label,input,select,textarea,[role="button"]{
   }
 
   start();
+})();
+
+/* ===== GALLERY — filters + lightbox (isolated scope) ===== */
+(function(){
+  "use strict";
+  /* ---------- data ---------- */
+  var LABELS = {civil:"Civil & Foundations", structures:"Structures & Erection", plant:"Plant & Electrical"};
+  var chips = [].slice.call(document.querySelectorAll(".chip"));
+  var items = [].slice.call(document.querySelectorAll(".gal__item"));
+  var countEl = document.getElementById("galCount");
+  var shown = items.slice();
+
+  function setCount(n){ countEl.textContent = n + (n === 1 ? " photograph" : " photographs"); }
+
+  function applyFilter(cat){
+    shown = [];
+    items.forEach(function(el){
+      var on = (cat === "all" || el.getAttribute("data-cat") === cat);
+      el.classList.toggle("is-hidden", !on);
+      if (on){ shown.push(el); el.classList.add("is-in"); }
+    });
+    setCount(shown.length);
+    chips.forEach(function(c){
+      var on = c.getAttribute("data-cat") === cat;
+      c.classList.toggle("is-on", on); c.setAttribute("aria-pressed", String(on));
+    });
+  }
+  chips.forEach(function(c){ c.addEventListener("click", function(){ applyFilter(c.getAttribute("data-cat")); }); });
+  setCount(items.length);
+
+  /* ---------- lightbox ---------- */
+  var lb = document.getElementById("lb"),
+      lbImg = document.getElementById("lbImg"),
+      lbCap = document.getElementById("lbCap"),
+      lbSub = document.getElementById("lbSub"),
+      lbNum = document.getElementById("lbNum"),
+      lbClose = document.getElementById("lbClose"),
+      lbPrev = document.getElementById("lbPrev"),
+      lbNext = document.getElementById("lbNext");
+  var pos = 0, lastFocus = null;
+
+  function render(){
+    var el = shown[pos]; if (!el) return;
+    lbImg.classList.remove("is-ready");
+    var pre = new Image();
+    pre.onload = function(){ lbImg.src = pre.src; lbImg.alt = el.getAttribute("data-alt"); lbImg.classList.add("is-ready"); };
+    pre.src = el.getAttribute("data-src");
+    lbCap.textContent = el.getAttribute("data-cap");
+    lbSub.textContent = LABELS[el.getAttribute("data-cat")] || "";
+    lbNum.textContent = (pos + 1) + " / " + shown.length;
+    [pos - 1, pos + 1].forEach(function(k){ if (shown[k]){ var n = new Image(); n.src = shown[k].getAttribute("data-src"); } });
+  }
+  function openAt(el){
+    pos = shown.indexOf(el); if (pos < 0) pos = 0;
+    lastFocus = el;
+    lb.classList.add("is-on"); lb.setAttribute("aria-hidden","false");
+    document.documentElement.style.overflow = "hidden";
+    render(); lbClose.focus();
+  }
+  function closeLb(){
+    lb.classList.remove("is-on"); lb.setAttribute("aria-hidden","true");
+    document.documentElement.style.overflow = "";
+    lbImg.removeAttribute("src"); lbImg.classList.remove("is-ready");
+    if (lastFocus) lastFocus.focus();
+  }
+  function go(step){ if (!shown.length) return; pos = (pos + step + shown.length) % shown.length; render(); }
+
+  items.forEach(function(el){ el.addEventListener("click", function(){ openAt(el); }); });
+  lbClose.addEventListener("click", closeLb);
+  lbPrev.addEventListener("click", function(){ go(-1); });
+  lbNext.addEventListener("click", function(){ go(1); });
+  lb.addEventListener("click", function(e){
+    if (e.target === lb || e.target.className === "lb__stage") closeLb();
+  });
+  document.addEventListener("keydown", function(e){
+    if (!lb.classList.contains("is-on")) return;
+    if (e.key === "Escape"){ closeLb(); }
+    else if (e.key === "ArrowLeft"){ go(-1); }
+    else if (e.key === "ArrowRight"){ go(1); }
+    else if (e.key === "Tab"){
+      var f = [lbClose, lbPrev, lbNext];
+      var i = f.indexOf(document.activeElement);
+      e.preventDefault();
+      f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+    }
+  });
+  var sx = null, sy = null;
+  lb.addEventListener("touchstart", function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
+  lb.addEventListener("touchend", function(e){
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 44 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+    sx = null; sy = null;
+  }, {passive:true});
 })();
 </script>
 </body>
