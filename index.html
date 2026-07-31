@@ -570,16 +570,22 @@ h1,h2,h3,.u-display{font-family:var(--f-display); font-weight:700; letter-spacin
 /* ============================================================
    CLIENTELE
    ============================================================ */
-.clients{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+.clients{position:relative; overflow:hidden; border:1px solid var(--line); border-radius:10px; background:var(--bg); -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.sec--tint .clients{background:var(--surface)}
+.clients__track{display:flex; width:max-content; animation:client-slide 34s linear infinite}
+.clients:hover .clients__track{animation-play-state:paused}
 .client{
-  background:var(--bg); min-height:132px; padding:26px 22px;
-  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px; text-align:center;
-  filter:grayscale(1); opacity:.72; transition:opacity .35s ease, filter .35s ease, background .35s ease;
+  flex:0 0 auto; width:210px; min-height:132px; padding:26px 22px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px; text-align:center;
+  border-right:1px solid var(--line);
+  filter:grayscale(1); opacity:.72; transition:opacity .35s ease, filter .35s ease;
 }
-.sec--tint .client{background:var(--surface)}
 .client:hover{opacity:1; filter:grayscale(0)}
+.client__logo{height:52px; width:auto; max-width:150px; object-fit:contain; display:block}
 .client__n{font-family:var(--f-display); font-weight:700; font-size:clamp(1rem,1.5vw,1.24rem); letter-spacing:.01em; line-height:1.15; color:var(--ink)}
 .client__s{font-family:var(--f-mono); font-size:9.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted)}
+@keyframes client-slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.clients__track{animation:none}}
 
 /* ============================================================
    CONTACT
@@ -1492,12 +1498,20 @@ a,button,summary,label,input,select,textarea,[role="button"]{
     </div>
 
     <div class="clients rv">
-      <div class="client"><span class="client__n">Ericsson</span><span class="client__s">Network OEM</span></div>
-      <div class="client"><span class="client__n">Sterlite Technologies</span><span class="client__s">STL · Optical</span></div>
-      <div class="client"><span class="client__n">Vertis Infrastructure</span><span class="client__s">Infra Partner</span></div>
-      <div class="client"><span class="client__n">Indus Towers</span><span class="client__s">Tower Infra</span></div>
-      <div class="client"><span class="client__n">Bharti Airtel</span><span class="client__s">Operator</span></div>
-      <div class="client"><span class="client__n">Reliance Jio</span><span class="client__s">Operator</span></div>
+      <div class="clients__track">
+        <div class="client"><img class="client__logo" src="L%26T.jpg" alt="L&T logo" loading="lazy" decoding="async"><span class="client__n">L&amp;T</span><span class="client__s">EPC Partner</span></div>
+        <div class="client"><img class="client__logo" src="Oriana.png" alt="Oriana logo" loading="lazy" decoding="async"><span class="client__n">Oriana</span><span class="client__s">Solar Developer</span></div>
+        <div class="client"><img class="client__logo" src="Radiate%20Energy.png" alt="Radiate Energy logo" loading="lazy" decoding="async"><span class="client__n">Radiate Energy</span><span class="client__s">Renewables</span></div>
+        <div class="client"><img class="client__logo" src="Sterling%20%26%20Wilson.jpg" alt="Sterling & Wilson logo" loading="lazy" decoding="async"><span class="client__n">Sterling &amp; Wilson</span><span class="client__s">Solar EPC</span></div>
+        <div class="client"><img class="client__logo" src="Tata%20Power.png" alt="Tata Power logo" loading="lazy" decoding="async"><span class="client__n">Tata Power</span><span class="client__s">Power Utility</span></div>
+        <div class="client"><img class="client__logo" src="Ultrathon%20Electric.png" alt="Ultrathon Electric logo" loading="lazy" decoding="async"><span class="client__n">Ultrathon Electric</span><span class="client__s">Electrical</span></div>
+        <div class="client"><img class="client__logo" src="L%26T.jpg" alt="L&T logo" loading="lazy" decoding="async"><span class="client__n">L&amp;T</span><span class="client__s">EPC Partner</span></div>
+        <div class="client"><img class="client__logo" src="Oriana.png" alt="Oriana logo" loading="lazy" decoding="async"><span class="client__n">Oriana</span><span class="client__s">Solar Developer</span></div>
+        <div class="client"><img class="client__logo" src="Radiate%20Energy.png" alt="Radiate Energy logo" loading="lazy" decoding="async"><span class="client__n">Radiate Energy</span><span class="client__s">Renewables</span></div>
+        <div class="client"><img class="client__logo" src="Sterling%20%26%20Wilson.jpg" alt="Sterling & Wilson logo" loading="lazy" decoding="async"><span class="client__n">Sterling &amp; Wilson</span><span class="client__s">Solar EPC</span></div>
+        <div class="client"><img class="client__logo" src="Tata%20Power.png" alt="Tata Power logo" loading="lazy" decoding="async"><span class="client__n">Tata Power</span><span class="client__s">Power Utility</span></div>
+        <div class="client"><img class="client__logo" src="Ultrathon%20Electric.png" alt="Ultrathon Electric logo" loading="lazy" decoding="async"><span class="client__n">Ultrathon Electric</span><span class="client__s">Electrical</span></div>
+      </div>
     </div>
   </div>
 </section>
