@@ -18,9 +18,7 @@ Solar&nbsp;&nbsp;|&nbsp;&nbsp;Telecom&nbsp;&nbsp;|&nbsp;&nbsp;Civil&nbsp;&nbsp;|
 <p>
 <img src="https://img.shields.io/badge/Built_with-HTML5-e34f26?logo=html5&logoColor=white" alt="HTML5">
 <img src="https://img.shields.io/badge/Single_Page-No_Build_Step-blue" alt="Single page">
-<img src="https://img.shields.io/badge/Projects-100%2B_Completed-brightgreen" alt="Projects">
 <img src="https://img.shields.io/badge/Since-2021-informational" alt="Since 2021">
-<img src="https://img.shields.io/badge/Coverage-Pan_India-orange" alt="Pan India">
 <img src="https://img.shields.io/badge/PWA-Ready-5a0fc8?logo=pwa&logoColor=white" alt="PWA ready">
 </p>
 
@@ -42,16 +40,14 @@ Solar&nbsp;&nbsp;|&nbsp;&nbsp;Telecom&nbsp;&nbsp;|&nbsp;&nbsp;Civil&nbsp;&nbsp;|
 
 ## Overview
 
-**Bharat Infra Associates (BIA)** is a service-provider company working across the **solar, telecom and construction** sectors in India. Founded in **2021** and headquartered in **East Delhi**, the company executes projects end-to-end with its own crews &mdash; from civil foundations and structure erection to AC/DC electrical balance of system, testing and commissioning.
+**Bharat Infra Associates (BIA)** is a service-provider company working across the **solar, telecom and construction** sectors. Established in **2021** and headquartered in **East Delhi**, its listed services include civil foundations, structure erection, AC/DC electrical work, testing, commissioning and O&amp;M. The supplied company information identifies operations in Bihar and Jharkhand.
 
 This repository holds the **official company website**: a fast, dependency-free, mobile-first single-page site with SEO structured data, an Open Graph card, a web manifest and a sitemap.
 
 <table>
 <tr>
-<td align="center"><b>100+</b><br>Projects Completed</td>
 <td align="center"><b>2021</b><br>Established</td>
-<td align="center"><b>Pan-India</b><br>Execution Reach</td>
-<td align="center"><b>In-house</b><br>Crews &amp; Supervision</td>
+<td align="center"><b>Bihar &amp; Jharkhand</b><br>Operating Experience</td>
 </tr>
 </table>
 
@@ -104,17 +100,7 @@ Preventive and breakdown maintenance, module cleaning and thermography, performa
 
 ---
 
-## Why Us
-
-| | Advantage | What it means for you |
-|:--:|:--|:--|
-| 1 | **Own execution crews** | Fewer hand-offs, tighter quality control and predictable timelines. |
-| 2 | **Multi-discipline scope** | Civil, erection and electrical delivered under one contract. |
-| 3 | **Pan-India mobility** | Teams mobilised across Delhi, Bihar, Jharkhand and beyond. |
-| 4 | **Safety &amp; documentation** | Method statements, torque records and handover dossiers. |
-| 5 | **Lifecycle support** | O&amp;M and performance reporting after commissioning. |
-
----
+<!-- TODO: Confirm project counts, team structure, geographic reach, safety documentation and contracting model before publishing performance claims. -->
 
 ## Tech Stack
 
