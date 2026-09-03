@@ -37,6 +37,7 @@
 <meta name="twitter:image" content="https://www.bharatinfrassociate.com/og-image.jpg">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="/icon-192.png" type="image/png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23fff' stroke='%237cc356' stroke-width='2'/%3E%3Cpath d='M6 16a10 10 0 0 1 20 0Z' fill='%23f26722'/%3E%3Cpath d='M10 18h12l3 8H7Z' fill='%232f6fd0'/%3E%3C/svg%3E">
 
@@ -45,7 +46,7 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["GeneralContractor", "Organization"],
+      "@type": ["Organization", "LocalBusiness"],
       "@id": "https://www.bharatinfrassociate.com/#organization",
       "name": "Bharat Infra Associates",
       "alternateName": "BIA",
@@ -58,9 +59,9 @@
       "image": "https://www.bharatinfrassociate.com/og-image.jpg",
       "description": "Bharat Infra Associates undertakes solar, telecom, civil, erection, AC/DC electrical and operations and maintenance work. The company was established in 2021 and has project experience in Bihar and Jharkhand.",
       "foundingDate": "2021",
-      "founder": {
+      "employee": {
         "@type": "Person",
-        "name": "Bundan Khan",
+        "name": "Mr. Bundan Khan",
         "jobTitle": "Managing Director"
       },
       "address": {
@@ -71,18 +72,16 @@
         "postalCode": "110092",
         "addressCountry": "IN"
       },
-      "telephone": "+91-98187-42322",
+      "telephone": ["+91-98187-42322", "+91-98188-75208"],
       "email": "procurement@bharatinfrassociate.com",
-      "contactPoint": [{
-        "@type": "ContactPoint",
-        "telephone": "+91-98187-42322",
-        "contactType": "sales",
-        "email": "procurement@bharatinfrassociate.com",
-        "areaServed": "IN",
-        "availableLanguage": ["en", "hi"]
-      }],
+      "contactPoint": [
+        { "@type": "ContactPoint", "telephone": "+91-98187-42322", "contactType": "project enquiries", "email": "procurement@bharatinfrassociate.com" },
+        { "@type": "ContactPoint", "telephone": "+91-98188-75208", "contactType": "project enquiries", "email": "procurement@bharatinfrassociate.com" }
+      ],
+      "sameAs": ["https://www.linkedin.com/company/bharat-infra-associates/"],
       "areaServed": [
-        { "@type": "Country", "name": "India" },
+        { "@type": "State", "name": "Bihar" },
+        { "@type": "State", "name": "Jharkhand" },
         { "@type": "State", "name": "Delhi" }
       ],
       "knowsAbout": [
@@ -127,6 +126,15 @@
     }
   ]
 }
+</script>
+
+<!-- TODO: Replace G-XXXXXXXXXX with the verified GA4 Measurement ID before production tracking is enabled. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
 </script>
 
 <style>
@@ -330,7 +338,8 @@ h1,h2,h3,.u-display{font-family:var(--f-display); font-weight:700; letter-spacin
    ============================================================ */
 .hero{
   position:relative; margin-top:calc(var(--hdr-h) * -1);
-  background:url("/WhatsApp%20Image%202026-07-27%20at%2010.37.01.jpeg") center/cover no-repeat;
+  background-image:image-set(url("/completed-solar-module-rows-dusk.webp") type("image/webp"),url("/completed-solar-module-rows-dusk.jpeg") type("image/jpeg"));
+  background-position:center; background-size:cover; background-repeat:no-repeat;
   min-height:min(94vh,860px); min-height:min(94svh,860px);
   display:flex; isolation:isolate;
 }
@@ -416,6 +425,7 @@ h1,h2,h3,.u-display{font-family:var(--f-display); font-weight:700; letter-spacin
 
 .sec__head{max-width:74ch; margin-bottom:clamp(40px,5vw,64px)}
 .sec__head h2{font-size:var(--fs-h2); line-height:1.06; margin-bottom:20px}
+.sec__head h1{font-size:var(--fs-h2); line-height:1.06; margin-bottom:20px}
 .sec__head p{color:var(--muted); font-size:var(--fs-lead); max-width:64ch}
 
 /* ============================================================
@@ -820,6 +830,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
 .gal__item{position:relative; display:block; width:100%; margin:0; padding:0; border:0; cursor:zoom-in; -webkit-appearance:none; appearance:none; font:inherit; color:inherit;
   aspect-ratio:4/5; overflow:hidden; border-radius:12px; background:var(--surface-2)}
 .gal__item img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.gal__item picture{display:contents}
 .gal__item:hover img{transform:scale(1.05)}
 .gal__item::after{content:""; position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .3s ease;
   background:linear-gradient(180deg,rgba(7,13,19,0) 42%,rgba(7,13,19,.72) 100%)}
@@ -879,6 +890,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
   .gal__item:hover img{transform:none}
 }
 </style>
+  <link rel="preload" as="image" href="/completed-solar-module-rows-dusk.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
 
@@ -1107,6 +1119,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
           <li>String layout, inverter and transformer yard works</li>
           <li>Testing, commissioning and performance handover</li>
         </ul>
+        <a class="area__link" href="/solar-epc-contractor.html">Solar EPC service details</a>
       </article>
 
       <article class="area rv" style="--d:80ms">
@@ -1130,6 +1143,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
           <li>Boundary walls, roads, drainage and site levelling</li>
           <li>Conversion and refurbishment of existing assets</li>
         </ul>
+        <a class="area__link" href="/civil-works.html">Civil works service details</a>
       </article>
 
       <article class="area rv" style="--d:40ms">
@@ -1154,6 +1168,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
           <li>Torque control, grouting and final tightening</li>
           <li>Height work under documented safety method</li>
         </ul>
+        <a class="area__link" href="/erection-services.html">Erection service details</a>
       </article>
 
       <article class="area rv" style="--d:120ms">
@@ -1177,6 +1192,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
           <li>Earthing, lightning protection and continuity testing</li>
           <li>Insulation resistance, polarity and pre-charge checks</li>
         </ul>
+        <a class="area__link" href="/electrical-ac-dc.html">AC/DC electrical service details</a>
       </article>
 
       <article class="area rv" style="--d:80ms">
@@ -1200,6 +1216,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
           <li>Communication network build and integration</li>
           <li>Site upgrades, swaps and capacity extensions</li>
         </ul>
+        <a class="area__link" href="/telecom-infrastructure.html">Telecom service details</a>
       </article>
 
       <article class="area rv" style="--d:40ms">
@@ -1224,6 +1241,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
           <li>Spares management and fault rectification</li>
           <li>Performance reporting against contracted output</li>
         </ul>
+        <a class="area__link" href="/om-asset-management.html">O&amp;M service details</a>
       </article>
     </div>
   </div>
@@ -1412,7 +1430,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
   <div class="wrap">
     <div class="sec__head rv">
       <p class="eyebrow"><span class="rule" aria-hidden="true"></span>Clientele</p>
-      <h2>Trusted on live networks.</h2>
+      <h2>Companies associated with our work</h2>
       <p>
         Operators, OEMs and infrastructure providers who have placed work orders with us.
       </p>
@@ -1420,18 +1438,18 @@ a,button,summary,label,input,select,textarea,[role="button"]{
 
     <div class="clients rv">
       <div class="clients__track">
-        <div class="client"><img class="client__logo" src="L%26T.jpg" alt="L&amp;T logo" loading="lazy" decoding="async"><span class="client__n">L&amp;T</span><span class="client__s">EPC Partner</span></div>
-        <div class="client"><img class="client__logo" src="Oriana.png" alt="Oriano logo" loading="lazy" decoding="async"><span class="client__n">Oriano</span><span class="client__s">Solar Developer</span></div>
-        <div class="client"><img class="client__logo" src="Radiate%20Energy.png" alt="Radiate Energy logo" loading="lazy" decoding="async"><span class="client__n">Radiate Energy</span><span class="client__s">Renewables</span></div>
-        <div class="client"><img class="client__logo" src="Sterling%20%26%20Wilson.jpg" alt="Sterling &amp; Wilson logo" loading="lazy" decoding="async"><span class="client__n">Sterling &amp; Wilson</span><span class="client__s">Solar EPC</span></div>
-        <div class="client"><img class="client__logo" src="Tata%20Power.png" alt="Tata Power logo" loading="lazy" decoding="async"><span class="client__n">Tata Power</span><span class="client__s">Power Utility</span></div>
-        <div class="client"><img class="client__logo" src="Ultrathon%20Electric.png" alt="Ultrathon Electric logo" loading="lazy" decoding="async"><span class="client__n">Ultrathon Electric</span><span class="client__s">Electrical</span></div>
-        <div class="client"><img class="client__logo" src="L%26T.jpg" alt="" loading="lazy" decoding="async"><span class="client__n">L&amp;T</span><span class="client__s">EPC Partner</span></div>
-        <div class="client"><img class="client__logo" src="Oriana.png" alt="" loading="lazy" decoding="async"><span class="client__n">Oriano</span><span class="client__s">Solar Developer</span></div>
-        <div class="client"><img class="client__logo" src="Radiate%20Energy.png" alt="" loading="lazy" decoding="async"><span class="client__n">Radiate Energy</span><span class="client__s">Renewables</span></div>
-        <div class="client"><img class="client__logo" src="Sterling%20%26%20Wilson.jpg" alt="" loading="lazy" decoding="async"><span class="client__n">Sterling &amp; Wilson</span><span class="client__s">Solar EPC</span></div>
-        <div class="client"><img class="client__logo" src="Tata%20Power.png" alt="" loading="lazy" decoding="async"><span class="client__n">Tata Power</span><span class="client__s">Power Utility</span></div>
-        <div class="client"><img class="client__logo" src="Ultrathon%20Electric.png" alt="" loading="lazy" decoding="async"><span class="client__n">Ultrathon Electric</span><span class="client__s">Electrical</span></div>
+        <div class="client"><img class="client__logo" src="L%26T.jpg" width="355" height="307" alt="L&amp;T logo" loading="lazy" decoding="async"><span class="client__n">L&amp;T</span><span class="client__s">EPC Partner</span></div>
+        <div class="client"><img class="client__logo" src="Oriana.png" width="3108" height="1376" alt="Oriano logo" loading="lazy" decoding="async"><span class="client__n">Oriano</span><span class="client__s">Solar Developer</span></div>
+        <div class="client"><img class="client__logo" src="Radiate%20Energy.png" width="3290" height="1280" alt="Radiate Energy logo" loading="lazy" decoding="async"><span class="client__n">Radiate Energy</span><span class="client__s">Renewables</span></div>
+        <div class="client"><img class="client__logo" src="Sterling%20%26%20Wilson.jpg" width="822" height="175" alt="Sterling &amp; Wilson logo" loading="lazy" decoding="async"><span class="client__n">Sterling &amp; Wilson</span><span class="client__s">Solar EPC</span></div>
+        <div class="client"><img class="client__logo" src="Tata%20Power.png" width="2628" height="1600" alt="Tata Power logo" loading="lazy" decoding="async"><span class="client__n">Tata Power</span><span class="client__s">Power Utility</span></div>
+        <div class="client"><img class="client__logo" src="Ultrathon%20Electric.png" width="3876" height="1056" alt="Ultrathon Electric logo" loading="lazy" decoding="async"><span class="client__n">Ultrathon Electric</span><span class="client__s">Electrical</span></div>
+        <div class="client"><img class="client__logo" src="L%26T.jpg" width="355" height="307" alt="" loading="lazy" decoding="async"><span class="client__n">L&amp;T</span><span class="client__s">EPC Partner</span></div>
+        <div class="client"><img class="client__logo" src="Oriana.png" width="3108" height="1376" alt="" loading="lazy" decoding="async"><span class="client__n">Oriano</span><span class="client__s">Solar Developer</span></div>
+        <div class="client"><img class="client__logo" src="Radiate%20Energy.png" width="3290" height="1280" alt="" loading="lazy" decoding="async"><span class="client__n">Radiate Energy</span><span class="client__s">Renewables</span></div>
+        <div class="client"><img class="client__logo" src="Sterling%20%26%20Wilson.jpg" width="822" height="175" alt="" loading="lazy" decoding="async"><span class="client__n">Sterling &amp; Wilson</span><span class="client__s">Solar EPC</span></div>
+        <div class="client"><img class="client__logo" src="Tata%20Power.png" width="2628" height="1600" alt="" loading="lazy" decoding="async"><span class="client__n">Tata Power</span><span class="client__s">Power Utility</span></div>
+        <div class="client"><img class="client__logo" src="Ultrathon%20Electric.png" width="3876" height="1056" alt="" loading="lazy" decoding="async"><span class="client__n">Ultrathon Electric</span><span class="client__s">Electrical</span></div>
       </div>
     </div>
   </div>
@@ -1460,100 +1478,100 @@ a,button,summary,label,input,select,textarea,[role="button"]{
     </div>
 
     <div class="gal" id="gal">
-      <button class="gal__item rv" type="button" data-i="3" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.54.jpeg" data-cap="Module mounting structure set-out" data-alt="Galvanised module mounting structure posts set out across a field" style="--d:135ms" aria-label="Open photograph: Module mounting structure set-out">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.54.jpeg" width="1280" height="720" alt="Galvanised module mounting structure posts set out across a field" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="3" data-cat="structures" data-src="solar-module-mounting-structure-field.webp" data-fallback="solar-module-mounting-structure-field.jpeg" data-cap="Module mounting structure set-out" data-alt="Galvanised module mounting structure posts set out across a field" style="--d:135ms" aria-label="Open photograph: Module mounting structure set-out">
+        <picture><source srcset="solar-module-mounting-structure-field.webp" type="image/webp"><img src="solar-module-mounting-structure-field.jpeg" width="1280" height="720" alt="Galvanised module mounting structure posts set out across a field" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Module mounting structure set-out</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="4" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.55%20(1).jpeg" data-cap="Posts along the cable route" data-alt="Line of galvanised mounting posts running beside an open cable trench" style="--d:180ms" aria-label="Open photograph: Posts along the cable route">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.55%20(1).jpeg" width="572" height="1280" alt="Line of galvanised mounting posts running beside an open cable trench" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="4" data-cat="structures" data-src="mounting-posts-cable-trench.webp" data-fallback="mounting-posts-cable-trench.jpeg" data-cap="Posts along the cable route" data-alt="Line of galvanised mounting posts running beside an open cable trench" style="--d:180ms" aria-label="Open photograph: Posts along the cable route">
+        <picture><source srcset="mounting-posts-cable-trench.webp" type="image/webp"><img src="mounting-posts-cable-trench.jpeg" width="572" height="1280" alt="Line of galvanised mounting posts running beside an open cable trench" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Posts along the cable route</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="5" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.55%20(2).jpeg" data-cap="Equipment room brickwork" data-alt="Masons raising brickwork for an equipment room on a cast RCC plinth" style="--d:225ms" aria-label="Open photograph: Equipment room brickwork">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.55%20(2).jpeg" width="1280" height="960" alt="Masons raising brickwork for an equipment room on a cast RCC plinth" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="5" data-cat="civil" data-src="equipment-room-brickwork-rcc-plinth.webp" data-fallback="equipment-room-brickwork-rcc-plinth.jpeg" data-cap="Equipment room brickwork" data-alt="Masons raising brickwork for an equipment room on a cast RCC plinth" style="--d:225ms" aria-label="Open photograph: Equipment room brickwork">
+        <picture><source srcset="equipment-room-brickwork-rcc-plinth.webp" type="image/webp"><img src="equipment-room-brickwork-rcc-plinth.jpeg" width="1280" height="960" alt="Masons raising brickwork for an equipment room on a cast RCC plinth" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Equipment room brickwork</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="6" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.55.jpeg" data-cap="Boundary fencing" data-alt="Chain-link boundary fence post grouted into a concrete base at the site edge" style="--d:270ms" aria-label="Open photograph: Boundary fencing">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.55.jpeg" width="720" height="1280" alt="Chain-link boundary fence post grouted into a concrete base at the site edge" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="6" data-cat="civil" data-src="boundary-fence-concrete-base.webp" data-fallback="boundary-fence-concrete-base.jpeg" data-cap="Boundary fencing" data-alt="Chain-link boundary fence post grouted into a concrete base at the site edge" style="--d:270ms" aria-label="Open photograph: Boundary fencing">
+        <picture><source srcset="boundary-fence-concrete-base.webp" type="image/webp"><img src="boundary-fence-concrete-base.jpeg" width="720" height="1280" alt="Chain-link boundary fence post grouted into a concrete base at the site edge" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Boundary fencing</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="7" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.56%20(1).jpeg" data-cap="Completed module table" data-alt="Completed module table mounted on a galvanised support structure" style="--d:315ms" aria-label="Open photograph: Completed module table">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.56%20(1).jpeg" width="520" height="1156" alt="Completed module table mounted on a galvanised support structure" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="7" data-cat="structures" data-src="completed-solar-module-table.webp" data-fallback="completed-solar-module-table.jpeg" data-cap="Completed module table" data-alt="Completed module table mounted on a galvanised support structure" style="--d:315ms" aria-label="Open photograph: Completed module table">
+        <picture><source srcset="completed-solar-module-table.webp" type="image/webp"><img src="completed-solar-module-table.jpeg" width="520" height="1156" alt="Completed module table mounted on a galvanised support structure" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Completed module table</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="8" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.56.jpeg" data-cap="Structure assembly on site" data-alt="Module mounting structure frame assembled on the ground with a piling rig working behind" style="--d:0ms" aria-label="Open photograph: Structure assembly on site">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.56.jpeg" width="960" height="1280" alt="Module mounting structure frame assembled on the ground with a piling rig working behind" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="8" data-cat="structures" data-src="module-mounting-frame-piling-rig.webp" data-fallback="module-mounting-frame-piling-rig.jpeg" data-cap="Structure assembly on site" data-alt="Module mounting structure frame assembled on the ground with a piling rig working behind" style="--d:0ms" aria-label="Open photograph: Structure assembly on site">
+        <picture><source srcset="module-mounting-frame-piling-rig.webp" type="image/webp"><img src="module-mounting-frame-piling-rig.jpeg" width="960" height="1280" alt="Module mounting structure frame assembled on the ground with a piling rig working behind" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Structure assembly on site</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="9" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.57%20(1).jpeg" data-cap="Transformer and inverter yard" data-alt="Transformer and inverter equipment installed under a canopy in the plant yard" style="--d:45ms" aria-label="Open photograph: Transformer and inverter yard">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.57%20(1).jpeg" width="1040" height="468" alt="Transformer and inverter equipment installed under a canopy in the plant yard" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="9" data-cat="plant" data-src="transformer-inverter-yard.webp" data-fallback="transformer-inverter-yard.jpeg" data-cap="Transformer and inverter yard" data-alt="Transformer and inverter equipment installed under a canopy in the plant yard" style="--d:45ms" aria-label="Open photograph: Transformer and inverter yard">
+        <picture><source srcset="transformer-inverter-yard.webp" type="image/webp"><img src="transformer-inverter-yard.jpeg" width="1040" height="468" alt="Transformer and inverter equipment installed under a canopy in the plant yard" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Transformer and inverter yard</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="10" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.57.jpeg" data-cap="Inverter skids and control room" data-alt="Inverter skids and control equipment behind the plant yard fencing" style="--d:90ms" aria-label="Open photograph: Inverter skids and control room">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.57.jpeg" width="520" height="1156" alt="Inverter skids and control equipment behind the plant yard fencing" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="10" data-cat="plant" data-src="inverter-skids-control-equipment.webp" data-fallback="inverter-skids-control-equipment.jpeg" data-cap="Inverter skids and control room" data-alt="Inverter skids and control equipment behind the plant yard fencing" style="--d:90ms" aria-label="Open photograph: Inverter skids and control room">
+        <picture><source srcset="inverter-skids-control-equipment.webp" type="image/webp"><img src="inverter-skids-control-equipment.jpeg" width="520" height="1156" alt="Inverter skids and control equipment behind the plant yard fencing" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Inverter skids and control room</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="11" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.58%20(1).jpeg" data-cap="Post grouted into pile cap" data-alt="Galvanised structure post grouted into a cast concrete pile cap" style="--d:135ms" aria-label="Open photograph: Post grouted into pile cap">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.58%20(1).jpeg" width="960" height="1280" alt="Galvanised structure post grouted into a cast concrete pile cap" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="11" data-cat="civil" data-src="structure-post-concrete-pile-cap.webp" data-fallback="structure-post-concrete-pile-cap.jpeg" data-cap="Post grouted into pile cap" data-alt="Galvanised structure post grouted into a cast concrete pile cap" style="--d:135ms" aria-label="Open photograph: Post grouted into pile cap">
+        <picture><source srcset="structure-post-concrete-pile-cap.webp" type="image/webp"><img src="structure-post-concrete-pile-cap.jpeg" width="960" height="1280" alt="Galvanised structure post grouted into a cast concrete pile cap" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Post grouted into pile cap</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="12" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.58%20(2).jpeg" data-cap="Tracker bearing assembly" data-alt="Tracker bearing housing bolted to the head of a driven pile" style="--d:180ms" aria-label="Open photograph: Tracker bearing assembly">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.58%20(2).jpeg" width="1200" height="1600" alt="Tracker bearing housing bolted to the head of a driven pile" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="12" data-cat="structures" data-src="solar-tracker-bearing-assembly.webp" data-fallback="solar-tracker-bearing-assembly.jpeg" data-cap="Tracker bearing assembly" data-alt="Tracker bearing housing bolted to the head of a driven pile" style="--d:180ms" aria-label="Open photograph: Tracker bearing assembly">
+        <picture><source srcset="solar-tracker-bearing-assembly.webp" type="image/webp"><img src="solar-tracker-bearing-assembly.jpeg" width="1200" height="1600" alt="Tracker bearing housing bolted to the head of a driven pile" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Tracker bearing assembly</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="13" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.58.jpeg" data-cap="Auger piling for foundations" data-alt="Hydraulic auger rig boring foundation holes in red site soil" style="--d:225ms" aria-label="Open photograph: Auger piling for foundations">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.58.jpeg" width="780" height="1040" alt="Hydraulic auger rig boring foundation holes in red site soil" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="13" data-cat="civil" data-src="auger-piling-foundations.webp" data-fallback="auger-piling-foundations.jpeg" data-cap="Auger piling for foundations" data-alt="Hydraulic auger rig boring foundation holes in red site soil" style="--d:225ms" aria-label="Open photograph: Auger piling for foundations">
+        <picture><source srcset="auger-piling-foundations.webp" type="image/webp"><img src="auger-piling-foundations.jpeg" width="780" height="1040" alt="Hydraulic auger rig boring foundation holes in red site soil" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Auger piling for foundations</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="14" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.59%20(1).jpeg" data-cap="Tracker bearing, front elevation" data-alt="Front view of a tracker bearing housing seated on a galvanised pile" style="--d:270ms" aria-label="Open photograph: Tracker bearing, front elevation">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.59%20(1).jpeg" width="1200" height="1600" alt="Front view of a tracker bearing housing seated on a galvanised pile" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="14" data-cat="structures" data-src="tracker-bearing-front-elevation.webp" data-fallback="tracker-bearing-front-elevation.jpeg" data-cap="Tracker bearing, front elevation" data-alt="Front view of a tracker bearing housing seated on a galvanised pile" style="--d:270ms" aria-label="Open photograph: Tracker bearing, front elevation">
+        <picture><source srcset="tracker-bearing-front-elevation.webp" type="image/webp"><img src="tracker-bearing-front-elevation.jpeg" width="1200" height="1600" alt="Front view of a tracker bearing housing seated on a galvanised pile" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Tracker bearing, front elevation</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="15" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.36.59.jpeg" data-cap="Bearing baseplate and bolting" data-alt="Close view of the tracker bearing baseplate and bolted connection" style="--d:315ms" aria-label="Open photograph: Bearing baseplate and bolting">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.36.59.jpeg" width="1200" height="1600" alt="Close view of the tracker bearing baseplate and bolted connection" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="15" data-cat="structures" data-src="tracker-bearing-baseplate-bolting.webp" data-fallback="tracker-bearing-baseplate-bolting.jpeg" data-cap="Bearing baseplate and bolting" data-alt="Close view of the tracker bearing baseplate and bolted connection" style="--d:315ms" aria-label="Open photograph: Bearing baseplate and bolting">
+        <picture><source srcset="tracker-bearing-baseplate-bolting.webp" type="image/webp"><img src="tracker-bearing-baseplate-bolting.jpeg" width="1200" height="1600" alt="Close view of the tracker bearing baseplate and bolted connection" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Bearing baseplate and bolting</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="16" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.00%20(1).jpeg" data-cap="Torque tube damper clamp" data-alt="Damper clamp fixed to the torque tube of a tracker row" style="--d:0ms" aria-label="Open photograph: Torque tube damper clamp">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.00%20(1).jpeg" width="1200" height="1600" alt="Damper clamp fixed to the torque tube of a tracker row" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="16" data-cat="structures" data-src="torque-tube-damper-clamp.webp" data-fallback="torque-tube-damper-clamp.jpeg" data-cap="Torque tube damper clamp" data-alt="Damper clamp fixed to the torque tube of a tracker row" style="--d:0ms" aria-label="Open photograph: Torque tube damper clamp">
+        <picture><source srcset="torque-tube-damper-clamp.webp" type="image/webp"><img src="torque-tube-damper-clamp.jpeg" width="1200" height="1600" alt="Damper clamp fixed to the torque tube of a tracker row" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Torque tube damper clamp</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="17" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.00%20(2).jpeg" data-cap="Torque tube bolted splice" data-alt="Bolted splice plate joining two lengths of tracker torque tube" style="--d:45ms" aria-label="Open photograph: Torque tube bolted splice">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.00%20(2).jpeg" width="1200" height="1600" alt="Bolted splice plate joining two lengths of tracker torque tube" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="17" data-cat="structures" data-src="torque-tube-bolted-splice.webp" data-fallback="torque-tube-bolted-splice.jpeg" data-cap="Torque tube bolted splice" data-alt="Bolted splice plate joining two lengths of tracker torque tube" style="--d:45ms" aria-label="Open photograph: Torque tube bolted splice">
+        <picture><source srcset="torque-tube-bolted-splice.webp" type="image/webp"><img src="torque-tube-bolted-splice.jpeg" width="1200" height="1600" alt="Bolted splice plate joining two lengths of tracker torque tube" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Torque tube bolted splice</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="18" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.00.jpeg" data-cap="Torque tube bearing clamp" data-alt="Torque tube seated in its bearing clamp on the support post" style="--d:90ms" aria-label="Open photograph: Torque tube bearing clamp">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.00.jpeg" width="1200" height="1600" alt="Torque tube seated in its bearing clamp on the support post" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="18" data-cat="structures" data-src="torque-tube-bearing-clamp.webp" data-fallback="torque-tube-bearing-clamp.jpeg" data-cap="Torque tube bearing clamp" data-alt="Torque tube seated in its bearing clamp on the support post" style="--d:90ms" aria-label="Open photograph: Torque tube bearing clamp">
+        <picture><source srcset="torque-tube-bearing-clamp.webp" type="image/webp"><img src="torque-tube-bearing-clamp.jpeg" width="1200" height="1600" alt="Torque tube seated in its bearing clamp on the support post" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Torque tube bearing clamp</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="19" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.01%20(1).jpeg" data-cap="Internal access track" data-alt="Internal access track running between completed module rows" style="--d:135ms" aria-label="Open photograph: Internal access track">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.01%20(1).jpeg" width="720" height="1280" alt="Internal access track running between completed module rows" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="19" data-cat="plant" data-src="solar-plant-internal-access-track.webp" data-fallback="solar-plant-internal-access-track.jpeg" data-cap="Internal access track" data-alt="Internal access track running between completed module rows" style="--d:135ms" aria-label="Open photograph: Internal access track">
+        <picture><source srcset="solar-plant-internal-access-track.webp" type="image/webp"><img src="solar-plant-internal-access-track.jpeg" width="720" height="1280" alt="Internal access track running between completed module rows" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Internal access track</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="20" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.01.jpeg" data-cap="Completed rows at dusk" data-alt="View beneath completed module rows at dusk" style="--d:180ms" aria-label="Open photograph: Completed rows at dusk">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.01.jpeg" width="1600" height="900" alt="View beneath completed module rows at dusk" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="20" data-cat="plant" data-src="completed-solar-module-rows-dusk.webp" data-fallback="completed-solar-module-rows-dusk.jpeg" data-cap="Completed rows at dusk" data-alt="View beneath completed module rows at dusk" style="--d:180ms" aria-label="Open photograph: Completed rows at dusk">
+        <picture><source srcset="completed-solar-module-rows-dusk.webp" type="image/webp"><img src="completed-solar-module-rows-dusk.jpeg" width="1600" height="900" alt="View beneath completed module rows at dusk" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Completed rows at dusk</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="21" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.02%20(1).jpeg" data-cap="Inverter row, site record" data-alt="Site record photograph of the inverter row at the plant" style="--d:225ms" aria-label="Open photograph: Inverter row, site record">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.02%20(1).jpeg" width="720" height="1600" alt="Site record photograph of the inverter row at the plant" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="21" data-cat="plant" data-src="solar-plant-inverter-row.webp" data-fallback="solar-plant-inverter-row.jpeg" data-cap="Inverter row, site record" data-alt="Site record photograph of the inverter row at the plant" style="--d:225ms" aria-label="Open photograph: Inverter row, site record">
+        <picture><source srcset="solar-plant-inverter-row.webp" type="image/webp"><img src="solar-plant-inverter-row.jpeg" width="720" height="1600" alt="Site record photograph of the inverter row at the plant" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Inverter row, site record</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="22" data-cat="structures" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.02%20(2).jpeg" data-cap="Table assembly by site crew" data-alt="Site crew assembling module tables and torque tubes on the ground" style="--d:270ms" aria-label="Open photograph: Table assembly by site crew">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.02%20(2).jpeg" width="1065" height="612" alt="Site crew assembling module tables and torque tubes on the ground" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="22" data-cat="structures" data-src="solar-module-table-assembly.webp" data-fallback="solar-module-table-assembly.jpeg" data-cap="Table assembly by site crew" data-alt="Site crew assembling module tables and torque tubes on the ground" style="--d:270ms" aria-label="Open photograph: Table assembly by site crew">
+        <picture><source srcset="solar-module-table-assembly.webp" type="image/webp"><img src="solar-module-table-assembly.jpeg" width="1065" height="612" alt="Site crew assembling module tables and torque tubes on the ground" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Table assembly by site crew</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="23" data-cat="plant" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.02.jpeg" data-cap="Completed rows on precast posts" data-alt="Completed module rows carried on precast concrete posts at dusk" style="--d:315ms" aria-label="Open photograph: Completed rows on precast posts">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.02.jpeg" width="720" height="1280" alt="Completed module rows carried on precast concrete posts at dusk" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="23" data-cat="plant" data-src="completed-module-rows-precast-posts.webp" data-fallback="completed-module-rows-precast-posts.jpeg" data-cap="Completed rows on precast posts" data-alt="Completed module rows carried on precast concrete posts at dusk" style="--d:315ms" aria-label="Open photograph: Completed rows on precast posts">
+        <picture><source srcset="completed-module-rows-precast-posts.webp" type="image/webp"><img src="completed-module-rows-precast-posts.jpeg" width="720" height="1280" alt="Completed module rows carried on precast concrete posts at dusk" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Completed rows on precast posts</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="24" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.03%20(1).jpeg" data-cap="Precast foundation posts" data-alt="Rows of precast concrete foundation posts installed across the site" style="--d:0ms" aria-label="Open photograph: Precast foundation posts">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.03%20(1).jpeg" width="867" height="1156" alt="Rows of precast concrete foundation posts installed across the site" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="24" data-cat="civil" data-src="precast-concrete-foundation-posts.webp" data-fallback="precast-concrete-foundation-posts.jpeg" data-cap="Precast foundation posts" data-alt="Rows of precast concrete foundation posts installed across the site" style="--d:0ms" aria-label="Open photograph: Precast foundation posts">
+        <picture><source srcset="precast-concrete-foundation-posts.webp" type="image/webp"><img src="precast-concrete-foundation-posts.jpeg" width="867" height="1156" alt="Rows of precast concrete foundation posts installed across the site" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Precast foundation posts</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="25" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.03%20(2).jpeg" data-cap="Precast posts and excavation" data-alt="Precast concrete posts in position with excavated spoil alongside" style="--d:45ms" aria-label="Open photograph: Precast posts and excavation">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.03%20(2).jpeg" width="867" height="1156" alt="Precast concrete posts in position with excavated spoil alongside" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="25" data-cat="civil" data-src="precast-posts-site-excavation.webp" data-fallback="precast-posts-site-excavation.jpeg" data-cap="Precast posts and excavation" data-alt="Precast concrete posts in position with excavated spoil alongside" style="--d:45ms" aria-label="Open photograph: Precast posts and excavation">
+        <picture><source srcset="precast-posts-site-excavation.webp" type="image/webp"><img src="precast-posts-site-excavation.jpeg" width="867" height="1156" alt="Precast concrete posts in position with excavated spoil alongside" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Precast posts and excavation</span>
       </button>
-      <button class="gal__item rv" type="button" data-i="26" data-cat="civil" data-src="WhatsApp%20Image%202026-07-27%20at%2010.37.03.jpeg" data-cap="Precast post, grouted base" data-alt="Close view of a precast concrete post grouted at its base" style="--d:90ms" aria-label="Open photograph: Precast post, grouted base">
-        <img src="WhatsApp%20Image%202026-07-27%20at%2010.37.03.jpeg" width="867" height="1156" alt="Close view of a precast concrete post grouted at its base" loading="lazy" decoding="async">
+      <button class="gal__item rv" type="button" data-i="26" data-cat="civil" data-src="precast-post-grouted-base.webp" data-fallback="precast-post-grouted-base.jpeg" data-cap="Precast post, grouted base" data-alt="Close view of a precast concrete post grouted at its base" style="--d:90ms" aria-label="Open photograph: Precast post, grouted base">
+        <picture><source srcset="precast-post-grouted-base.webp" type="image/webp"><img src="precast-post-grouted-base.jpeg" width="867" height="1156" alt="Close view of a precast concrete post grouted at its base" loading="lazy" decoding="async"></picture>
         <span class="gal__cap">Precast post, grouted base</span>
       </button>
     </div>
@@ -1609,7 +1627,8 @@ a,button,summary,label,input,select,textarea,[role="button"]{
       </div>
 
       <form class="form rv" id="form" action="https://api.web3forms.com/submit" method="POST" novalidate style="--d:100ms">
-        <input type="hidden" name="access_key" value="c860af1e-516f-492f-acef-2ffc346421f4">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <!-- TODO: Replace YOUR_ACCESS_KEY_HERE with the verified Web3Forms access key. -->
         <div class="field field--full">
           <label for="f-name">Full Name <b>*</b></label>
           <input type="text" id="f-name" name="name" placeholder="Your full name" autocomplete="name" required>
@@ -1987,7 +2006,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify({
-        access_key: "c860af1e-516f-492f-acef-2ffc346421f4",
+        access_key: "YOUR_ACCESS_KEY_HERE",
         subject: subject,
         name: name.value.trim(),
         phone: "+91 " + digits,
@@ -2000,6 +2019,9 @@ a,button,summary,label,input,select,textarea,[role="button"]{
       })
     }).then(function(r){ return r.json(); }).then(function(data){
       if (data.success) {
+        if (typeof gtag === "function") {
+          gtag("event", "generate_lead", { event_category: "enquiry_form", service: service.value });
+        }
         okBox.classList.add("is-on");
         form.reset();
       } else {
@@ -2288,7 +2310,8 @@ a,button,summary,label,input,select,textarea,[role="button"]{
     var el = shown[pos]; if (!el) return;
     lbImg.classList.remove("is-ready");
     var pre = new Image();
-    pre.onload = function(){ lbImg.src = pre.src; lbImg.alt = el.getAttribute("data-alt"); lbImg.classList.add("is-ready"); };
+    pre.onload = function(){ lbImg.src = pre.src; lbImg.alt = el.getAttribute("data-alt"); lbImg.width = pre.naturalWidth; lbImg.height = pre.naturalHeight; lbImg.classList.add("is-ready"); };
+    pre.onerror = function(){ pre.src = el.getAttribute("data-fallback"); };
     pre.src = el.getAttribute("data-src");
     lbCap.textContent = el.getAttribute("data-cap");
     lbSub.textContent = LABELS[el.getAttribute("data-cat")] || "";

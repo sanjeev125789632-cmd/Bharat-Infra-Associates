@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "bharatinfrassociate.com" }],
+      "destination": "https://www.bharatinfrassociate.com/$1",
+      "permanent": true
+    }
+  ]
+}
