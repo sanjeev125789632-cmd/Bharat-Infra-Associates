@@ -1,8 +1,15 @@
 # Bharat Infra Associates
 # Canonical host: https://www.bharatinfrassociate.com
-# The bare domain should 301-redirect to www so both forms do not get indexed.
+# The bare domain 301-redirects to www (see vercel.json / .htaccess),
+# so both forms do not get indexed.
 
 User-agent: *
 Allow: /
+
+# Repo files served from the web root by static hosting but not content.
+Disallow: /seo-verify.sh
+Disallow: /vercel.json
+Disallow: /.htaccess
+Disallow: /README.md
 
 Sitemap: https://www.bharatinfrassociate.com/sitemap.xml
