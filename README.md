@@ -1,9 +1,9 @@
 <!-- ========================= HERO / HEADER ========================= -->
 <div align="center">
 
-<img src="og-image.jpg" alt="Bharat Infra Associates - Solar, Telecom &amp; Civil Infrastructure" width="100%">
+<img src="og-image.jpg" alt="Bharat Infra Associate - Solar, Telecom &amp; Civil Infrastructure" width="100%">
 
-<h1>Bharat Infra Associates</h1>
+<h1>Bharat Infra Associate</h1>
 
 <p><b><i>&ldquo;All Types Solar Project&rdquo;</i></b><br>
 Solar&nbsp;&nbsp;|&nbsp;&nbsp;Telecom&nbsp;&nbsp;|&nbsp;&nbsp;Civil&nbsp;&nbsp;|&nbsp;&nbsp;Erection&nbsp;&nbsp;|&nbsp;&nbsp;AC/DC Electrical&nbsp;&nbsp;|&nbsp;&nbsp;O&amp;M</p>
@@ -40,7 +40,7 @@ Solar&nbsp;&nbsp;|&nbsp;&nbsp;Telecom&nbsp;&nbsp;|&nbsp;&nbsp;Civil&nbsp;&nbsp;|
 
 ## Overview
 
-**Bharat Infra Associates (BIA)** is a service-provider company working across the **solar, telecom and construction** sectors. Established in **2021** and headquartered in **East Delhi**, its listed services include civil foundations, structure erection, AC/DC electrical work, testing, commissioning and O&amp;M. The supplied company information identifies operations in Bihar and Jharkhand.
+**Bharat Infra Associate (BIA)** is a service-provider company working across the **solar, telecom and construction** sectors. Established in **2021** and headquartered in **East Delhi**, its listed services include civil foundations, structure erection, AC/DC electrical work, testing, commissioning and O&amp;M. The supplied company information identifies operations in Bihar and Jharkhand.
 
 This repository holds the **official company website**: a fast, dependency-free, mobile-first single-page site with SEO structured data, an Open Graph card, a web manifest and a sitemap.
 
@@ -196,7 +196,7 @@ Suggestions and fixes are welcome: open an issue, or fork the repo, create a bra
 ## Contact
 
 <table>
-<tr><td><b>Company</b></td><td>Bharat Infra Associates (BIA)</td></tr>
+<tr><td><b>Company</b></td><td>Bharat Infra Associate (BIA)</td></tr>
 <tr><td><b>Managing Director</b></td><td>Bundan Khan</td></tr>
 <tr><td><b>Head Office</b></td><td>B-49, 3rd Floor, Mehtab Complex, Joshi Colony, IP Extension, Delhi 110092, India</td></tr>
 <tr><td><b>Phone</b></td><td><a href="tel:+919818742322">+91 98187 42322</a></td></tr>
@@ -210,12 +210,12 @@ Suggestions and fixes are welcome: open an issue, or fork the repo, create a bra
 <!-- ============================== FOOTER ============================== -->
 <div align="center">
 
-### Bharat Infra Associates
+### Bharat Infra Associate
 Solar &bull; Telecom &bull; Civil &bull; Erection &bull; Electrical &bull; O&amp;M
 
 <a href="#overview">Back to top &uarr;</a>
 
-<sub>© 2026 Bharat Infra Associates. All rights reserved.<br>
+<sub>© 2026 Bharat Infra Associate. All rights reserved.<br>
 Built and maintained with care in Delhi, India.</sub>
 
 </div>
