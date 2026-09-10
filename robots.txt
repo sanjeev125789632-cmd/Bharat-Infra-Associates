@@ -1,4 +1,4 @@
-# Bharat Infra Associates
+# Bharat Infra Associate
 # Canonical host: https://www.bharatinfrassociate.com
 # The bare domain 301-redirects to www (see vercel.json / .htaccess),
 # so both forms do not get indexed.
