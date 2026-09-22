@@ -50,7 +50,7 @@
       "@id": "https://www.bharatinfrassociate.com/#organization",
       "name": "Bharat Infra Associate",
       "alternateName": "BIA",
-      "slogan": "All Types Solar Project",
+      "slogan": "Solar, Telecom, Civil and Electrical Project Work",
       "url": "https://www.bharatinfrassociate.com/",
       "logo": {
         "@type": "ImageObject",
@@ -81,8 +81,7 @@
       "sameAs": ["https://www.linkedin.com/company/bharat-infra-associates/"],
       "areaServed": [
         { "@type": "State", "name": "Bihar" },
-        { "@type": "State", "name": "Jharkhand" },
-        { "@type": "State", "name": "Delhi" }
+        { "@type": "State", "name": "Jharkhand" }
       ],
       "knowsAbout": [
         "Solar power plant EPC",
@@ -128,14 +127,7 @@
 }
 </script>
 
-<!-- TODO: Replace G-XXXXXXXXXX with the verified GA4 Measurement ID before production tracking is enabled. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
-</script>
+<script src="/analytics.js" defer></script>
 
 <style>
 /* ============================================================
@@ -144,8 +136,8 @@ gtag('config', 'G-XXXXXXXXXX');
 :root{
   --ink:#1a1a1a;
   --ink-2:#39414a;
-  --muted:#6b7480;
-  --faint:#727b87;
+  --muted:#68717d;
+  --faint:#68717d;
   --bg:#ffffff;
   --surface:#f5f7f9;
   --surface-2:#edf1f4;
@@ -206,7 +198,7 @@ gtag('config', 'G-XXXXXXXXXX');
   --shadow-lg:0 2px 4px rgba(0,0,0,.5), 0 26px 60px -28px rgba(0,0,0,.9);
 }
 :root[data-theme="light"]{
-  --ink:#1a1a1a; --ink-2:#39414a; --muted:#6b7480; --faint:#727b87;
+  --ink:#1a1a1a; --ink-2:#39414a; --muted:#68717d; --faint:#68717d;
   --bg:#ffffff; --surface:#f5f7f9; --surface-2:#edf1f4;
   --line:#e0e5ea; --line-2:#cbd3db;
   --green:#309c47; --green-lt:#7cc356; --blue:#2f86d8; --indigo:#3f57bd; --saffron:#e8622a;
@@ -967,11 +959,11 @@ a,button,summary,label,input,select,textarea,[role="button"]{
 <!-- ===== HEADER ===== -->
 <header class="hdr on-hero" id="hdr">
   <div class="hdr__in">
-    <a class="brand" href="#top" aria-label="Bharat Infra Associate — home">
-      <svg class="brand__mark" viewBox="0 0 100 100" role="img" aria-label="Bharat Infra Associate logo"><use href="#bia-mark"/></svg>
+    <a class="brand" href="#top">
+      <svg class="brand__mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#bia-mark"/></svg>
       <span class="brand__txt">
         <span class="brand__name">Bharat Infra Associate</span>
-        <span class="brand__sub">All Types Solar Project</span>
+        <span class="brand__sub">Solar, Telecom, Civil and Electrical Project Work</span>
       </span>
     </a>
 
@@ -1011,7 +1003,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
       Bihar and Jharkhand and a head office in East Delhi.
     </p>
     <div class="hero__cta">
-      <a class="pill" href="/contact.html">
+      <a class="pill" href="/contact.html" data-quote-cta data-cta="hero">
         Discuss a Project
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M3 11 11 3M4.6 3H11v6.4"/>
@@ -1032,37 +1024,20 @@ a,button,summary,label,input,select,textarea,[role="button"]{
 
 <section class="sec sec--tint" aria-labelledby="explore-title"><div class="wrap"><div class="sec__head rv"><p class="eyebrow"><span class="rule" aria-hidden="true"></span>Company Information</p><h2 id="explore-title">Explore Bharat Infra Associate</h2><p>Open the relevant page for company information, services, project experience, updates, site photographs or enquiries.</p></div><div class="culture"><article class="cult rv"><span class="cult__k">Company</span><h3><a href="/about.html">About Us</a></h3><p>Background, leadership, services and geographic experience.</p></article><article class="cult rv"><span class="cult__k">Work</span><h3><a href="/projects.html">Projects</a></h3><p>Verified project information, location pages and photographs.</p></article><article class="cult rv"><span class="cult__k">Services</span><h3><a href="/business-areas.html">Business Areas</a></h3><p>Solar, telecom, civil, erection, electrical and O&amp;M scopes.</p></article><article class="cult rv"><span class="cult__k">Updates</span><h3><a href="/news.html">News</a></h3><p>Verified company history and approved announcements.</p></article><article class="cult rv"><span class="cult__k">Process</span><h3><a href="/culture.html">Culture</a></h3><p>Pre-start, execution, reporting, testing and handover controls.</p></article><article class="cult rv"><span class="cult__k">Contact</span><h3><a href="/contact.html">Discuss a Project</a></h3><p>Send the project location, service and brief scope.</p></article></div></div></section>
 
-<section class="sec" aria-labelledby="services-title"><div class="wrap"><div class="sec__head rv"><p class="eyebrow"><span class="rule" aria-hidden="true"></span>Services and Locations</p><h2 id="services-title">Service scope and project locations</h2><p>Each page sets out the stated work, interfaces and enquiry information for that scope. The location pages cover the states where the company states project experience.</p></div><div class="culture"><article class="cult rv"><span class="cult__k">Solar</span><h3><a href="/solar-epc-contractor.html">Solar EPC contractor</a></h3><p>Foundations, module mounting structures, AC/DC works, testing and handover.</p></article><article class="cult rv"><span class="cult__k">Telecom</span><h3><a href="/telecom-infrastructure.html">Telecom infrastructure</a></h3><p>Tower civil and erection, antenna mounting, fibre trenching, splicing and integration.</p></article><article class="cult rv"><span class="cult__k">Civil</span><h3><a href="/civil-works.html">Civil works</a></h3><p>Excavation, PCC and RCC foundations, plinths, trenches, roads and drainage.</p></article><article class="cult rv"><span class="cult__k">Erection</span><h3><a href="/erection-services.html">Erection services</a></h3><p>Structural and mechanical erection, alignment, torque control and grouting.</p></article><article class="cult rv"><span class="cult__k">Electrical</span><h3><a href="/electrical-ac-dc.html">AC/DC electrical works</a></h3><p>DC strings, combiners, LT panels, cabling, terminations and earthing.</p></article><article class="cult rv"><span class="cult__k">O&amp;M</span><h3><a href="/om-asset-management.html">Asset management and O&amp;M</a></h3><p>Preventive maintenance, cleaning, thermography, string checks and fault rectification.</p></article><article class="cult rv"><span class="cult__k">Bihar</span><h3><a href="/projects-bihar.html">Projects in Bihar</a></h3><p>Stated service areas and enquiry information for projects in Bihar.</p></article><article class="cult rv"><span class="cult__k">Jharkhand</span><h3><a href="/projects-jharkhand.html">Projects in Jharkhand</a></h3><p>Stated service areas and enquiry information for projects in Jharkhand.</p></article></div></div></section>
+<section class="sec" aria-labelledby="services-title"><div class="wrap"><div class="sec__head rv"><p class="eyebrow"><span class="rule" aria-hidden="true"></span>Services and Locations</p><h2 id="services-title">Service scope</h2><p>Each page sets out the stated work, interfaces and enquiry information for that scope. Geographic experience is covered on a single projects page rather than a page per state.</p></div><div class="culture"><article class="cult rv"><span class="cult__k">Solar</span><h3><a href="/solar-epc-contractor.html">Solar EPC contractor</a></h3><p>Foundations, module mounting structures, AC/DC works, testing and handover.</p></article><article class="cult rv"><span class="cult__k">Telecom</span><h3><a href="/telecom-infrastructure.html">Telecom infrastructure</a></h3><p>Tower civil and erection, antenna mounting, fibre trenching, splicing and integration.</p></article><article class="cult rv"><span class="cult__k">Civil</span><h3><a href="/civil-works.html">Civil works</a></h3><p>Excavation, PCC and RCC foundations, plinths, trenches, roads and drainage.</p></article><article class="cult rv"><span class="cult__k">Erection</span><h3><a href="/erection-services.html">Erection services</a></h3><p>Structural and mechanical erection, alignment, torque control and grouting.</p></article><article class="cult rv"><span class="cult__k">Electrical</span><h3><a href="/electrical-ac-dc.html">AC/DC electrical works</a></h3><p>DC strings, combiners, LT panels, cabling, terminations and earthing.</p></article><article class="cult rv"><span class="cult__k">O&amp;M</span><h3><a href="/om-asset-management.html">Asset management and O&amp;M</a></h3><p>Preventive maintenance, cleaning, thermography, string checks and fault rectification.</p></article><article class="cult rv"><span class="cult__k">Locations</span><h3><a href="/projects.html">Project experience</a></h3><p>Stated project experience in Bihar and Jharkhand, and what a verified project record must show.</p></article></div></div></section>
 
 <!-- ===== CLIENTELE ===== -->
-<section class="sec" id="clients">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <p class="eyebrow"><span class="rule" aria-hidden="true"></span>Clientele</p>
-      <h2>Companies associated with our work</h2>
-      <p>
-        Operators, OEMs and infrastructure providers who have placed work orders with us.
-      </p>
-    </div>
-
-    <div class="clients rv">
-      <div class="clients__track">
-        <div class="client"><img class="client__logo" src="L%26T.jpg" width="355" height="307" alt="L&amp;T logo" loading="lazy" decoding="async"><span class="client__n">L&amp;T</span><span class="client__s">EPC Partner</span></div>
-        <div class="client"><img class="client__logo" src="Oriana.png" width="3108" height="1376" alt="Oriano logo" loading="lazy" decoding="async"><span class="client__n">Oriano</span><span class="client__s">Solar Developer</span></div>
-        <div class="client"><img class="client__logo" src="Radiate%20Energy.png" width="3290" height="1280" alt="Radiate Energy logo" loading="lazy" decoding="async"><span class="client__n">Radiate Energy</span><span class="client__s">Renewables</span></div>
-        <div class="client"><img class="client__logo" src="Sterling%20%26%20Wilson.jpg" width="822" height="175" alt="Sterling &amp; Wilson logo" loading="lazy" decoding="async"><span class="client__n">Sterling &amp; Wilson</span><span class="client__s">Solar EPC</span></div>
-        <div class="client"><img class="client__logo" src="Tata%20Power.png" width="2628" height="1600" alt="Tata Power logo" loading="lazy" decoding="async"><span class="client__n">Tata Power</span><span class="client__s">Power Utility</span></div>
-        <div class="client"><img class="client__logo" src="Ultrathon%20Electric.png" width="3876" height="1056" alt="Ultrathon Electric logo" loading="lazy" decoding="async"><span class="client__n">Ultrathon Electric</span><span class="client__s">Electrical</span></div>
-        <div class="client"><img class="client__logo" src="L%26T.jpg" width="355" height="307" alt="" loading="lazy" decoding="async"><span class="client__n">L&amp;T</span><span class="client__s">EPC Partner</span></div>
-        <div class="client"><img class="client__logo" src="Oriana.png" width="3108" height="1376" alt="" loading="lazy" decoding="async"><span class="client__n">Oriano</span><span class="client__s">Solar Developer</span></div>
-        <div class="client"><img class="client__logo" src="Radiate%20Energy.png" width="3290" height="1280" alt="" loading="lazy" decoding="async"><span class="client__n">Radiate Energy</span><span class="client__s">Renewables</span></div>
-        <div class="client"><img class="client__logo" src="Sterling%20%26%20Wilson.jpg" width="822" height="175" alt="" loading="lazy" decoding="async"><span class="client__n">Sterling &amp; Wilson</span><span class="client__s">Solar EPC</span></div>
-        <div class="client"><img class="client__logo" src="Tata%20Power.png" width="2628" height="1600" alt="" loading="lazy" decoding="async"><span class="client__n">Tata Power</span><span class="client__s">Power Utility</span></div>
-        <div class="client"><img class="client__logo" src="Ultrathon%20Electric.png" width="3876" height="1056" alt="" loading="lazy" decoding="async"><span class="client__n">Ultrathon Electric</span><span class="client__s">Electrical</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- REMOVED 2026-09-22: the "Clientele" carousel named L&T, Oriano, Radiate Energy,
+     Sterling & Wilson, Tata Power and Ultrathon Electric as companies that "have placed
+     work orders with us", and tagged L&T as an EPC partner. No work order, contract,
+     engagement confirmation or logo-display permission exists in this repository for any
+     of them, so the section was removed rather than reworded.
+     TODO: CLIENT EVIDENCE REQUIRED before any of it returns, per company:
+       (a) work order or contract number and date;
+       (b) whether the engagement was direct or as a subcontractor, and to whom;
+       (c) written permission to display that company's logo on this website;
+       (d) the exact wording that company approves for describing the relationship.
+     The logo image files remain in the repository but are referenced by no page. -->
 
 </main>
 
@@ -1075,7 +1050,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
           <svg class="ftr__mark" viewBox="0 0 100 100" role="img" aria-label="Bharat Infra Associate logo"><use href="#bia-mark"/></svg>
           <div>
             <div class="ftr__name">Bharat Infra Associate</div>
-            <div class="ftr__tag">All Types Solar Project</div>
+            <div class="ftr__tag">Solar, Telecom, Civil and Electrical Project Work</div>
           </div>
         </div>
         <p class="ftr__lede">
@@ -1102,7 +1077,7 @@ a,button,summary,label,input,select,textarea,[role="button"]{
 
       <nav aria-label="Sitemap">
         <p class="ftr__k">Sitemap</p>
-        <div class="ftr__map"><a href="/about.html">About Us</a><a href="/projects.html">Projects</a><a href="/business-areas.html">Business Areas</a><a href="/news.html">News</a><a href="/culture.html">Culture</a><a href="/gallery.html">Gallery</a><a href="#clients">Clientele</a><a href="/contact.html">Contact</a></div>
+        <div class="ftr__map"><a href="/about.html">About Us</a><a href="/projects.html">Projects</a><a href="/business-areas.html">Business Areas</a><a href="/news.html">News</a><a href="/culture.html">Culture</a><a href="/gallery.html">Gallery</a><a href="/contact.html">Contact</a></div>
       </nav>
 
       <div>
@@ -1289,83 +1264,6 @@ a,button,summary,label,input,select,textarea,[role="button"]{
   }
   window.addEventListener("scroll", onNav, {passive:true});
   onNav();
-
-  /* ---------- contact form ---------- */
-  var form = document.getElementById("form");
-  var okBox = document.getElementById("formOk");
-  if (form) {
-  function fieldOf(input){ return input.closest(".field"); }
-  function setBad(input, bad){ fieldOf(input).classList.toggle("is-bad", bad); }
-
-  form.addEventListener("submit", function(e){
-    e.preventDefault();
-    var name  = form.querySelector("#f-name");
-    var phone = form.querySelector("#f-phone");
-    var email = form.querySelector("#f-email");
-    var comp  = form.querySelector("#f-company");
-    var location = form.querySelector("#f-location");
-    var service = form.querySelector("#f-service");
-    var start = form.querySelector("#f-start");
-    var msg   = form.querySelector("#f-msg");
-
-    var digits = phone.value.replace(/\D/g, "");
-    var bad = [];
-    if (!name.value.trim()){ setBad(name, true); bad.push(name); } else setBad(name, false);
-    if (digits.length !== 10){ setBad(phone, true); bad.push(phone); } else setBad(phone, false);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())){ setBad(email, true); bad.push(email); } else setBad(email, false);
-    if (!location.value.trim()){ setBad(location, true); bad.push(location); } else setBad(location, false);
-    if (!service.value){ setBad(service, true); bad.push(service); } else setBad(service, false);
-    if (!msg.value.trim()){ setBad(msg, true); bad.push(msg); } else setBad(msg, false);
-
-    if (bad.length){ okBox.classList.remove("is-on"); bad[0].focus(); return; }
-
-    var subject = "Project enquiry — " + name.value.trim() + (comp.value.trim() ? " (" + comp.value.trim() + ")" : "");
-    var body =
-      "Name: " + name.value.trim() + "\n" +
-      "Phone: +91 " + digits + "\n" +
-      "Email: " + email.value.trim() + "\n" +
-      "Company: " + (comp.value.trim() || "—") + "\n\n" +
-      "Project location: " + location.value.trim() + "\n" +
-      "Required service: " + service.value + "\n" +
-      "Expected start: " + (start.value.trim() || "Not specified") + "\n\n" +
-      "Brief scope:\n" + msg.value.trim() + "\n";
-
-    fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify({
-        access_key: "YOUR_ACCESS_KEY_HERE",
-        subject: subject,
-        name: name.value.trim(),
-        phone: "+91 " + digits,
-        email: email.value.trim(),
-        company: comp.value.trim() || "—",
-        project_location: location.value.trim(),
-        required_service: service.value,
-        expected_start: start.value.trim() || "Not specified",
-        message: body
-      })
-    }).then(function(r){ return r.json(); }).then(function(data){
-      if (data.success) {
-        if (typeof gtag === "function") {
-          gtag("event", "generate_lead", { event_category: "enquiry_form", service: service.value });
-        }
-        okBox.classList.add("is-on");
-        form.reset();
-      } else {
-        alert("Sorry, something went wrong. Please email procurement@bharatinfrassociate.com");
-      }
-    }).catch(function(){
-      alert("Sorry, something went wrong. Please email procurement@bharatinfrassociate.com");
-    });
-  });
-
-  form.addEventListener("input", function(e){
-    var f = e.target.closest(".field");
-    if (f) f.classList.remove("is-bad");
-  });
-
-  }
 
   /* ==========================================================
      HERO — aerial solar array, rendered in perspective.

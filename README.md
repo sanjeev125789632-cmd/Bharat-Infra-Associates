@@ -5,7 +5,7 @@
 
 <h1>Bharat Infra Associate</h1>
 
-<p><b><i>&ldquo;All Types Solar Project&rdquo;</i></b><br>
+<p><b><i>&ldquo;Solar, Telecom, Civil and Electrical Project Work&rdquo;</i></b><br>
 Solar&nbsp;&nbsp;|&nbsp;&nbsp;Telecom&nbsp;&nbsp;|&nbsp;&nbsp;Civil&nbsp;&nbsp;|&nbsp;&nbsp;Erection&nbsp;&nbsp;|&nbsp;&nbsp;AC/DC Electrical&nbsp;&nbsp;|&nbsp;&nbsp;O&amp;M</p>
 
 <p>
@@ -17,7 +17,7 @@ Solar&nbsp;&nbsp;|&nbsp;&nbsp;Telecom&nbsp;&nbsp;|&nbsp;&nbsp;Civil&nbsp;&nbsp;|
 
 <p>
 <img src="https://img.shields.io/badge/Built_with-HTML5-e34f26?logo=html5&logoColor=white" alt="HTML5">
-<img src="https://img.shields.io/badge/Single_Page-No_Build_Step-blue" alt="Single page">
+<img src="https://img.shields.io/badge/Static_Site-No_Build_Step-blue" alt="Static site">
 <img src="https://img.shields.io/badge/Since-2021-informational" alt="Since 2021">
 <img src="https://img.shields.io/badge/PWA-Ready-5a0fc8?logo=pwa&logoColor=white" alt="PWA ready">
 </p>
@@ -42,7 +42,7 @@ Solar&nbsp;&nbsp;|&nbsp;&nbsp;Telecom&nbsp;&nbsp;|&nbsp;&nbsp;Civil&nbsp;&nbsp;|
 
 **Bharat Infra Associate (BIA)** is a service-provider company working across the **solar, telecom and construction** sectors. Established in **2021** and headquartered in **East Delhi**, its listed services include civil foundations, structure erection, AC/DC electrical work, testing, commissioning and O&amp;M. The supplied company information identifies operations in Bihar and Jharkhand.
 
-This repository holds the **official company website**: a fast, dependency-free, mobile-first single-page site with SEO structured data, an Open Graph card, a web manifest and a sitemap.
+This repository holds the **official company website**: a fast, dependency-free, mobile-first static site with SEO structured data, an Open Graph card, a web manifest and a sitemap.
 
 <table>
 <tr>
@@ -112,7 +112,7 @@ Preventive and breakdown maintenance, module cleaning and thermography, performa
 <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel">
 </p>
 
-- **Zero dependencies** &mdash; one self-contained `index.html`, no frameworks, no build tools.
+- **Zero dependencies** &mdash; plain HTML, CSS and vanilla JS. No frameworks, no build step.
 - **Responsive &amp; accessible** &mdash; fluid layout with light/dark `theme-color` support.
 - **SEO ready** &mdash; canonical URL, meta description, Open Graph, Twitter card and `schema.org` JSON-LD graph.
 - **Installable** &mdash; `site.webmanifest` plus maskable and Apple touch icons.
@@ -138,7 +138,7 @@ python -m http.server 5173
 # then visit http://localhost:5173
 ```
 
-> **Tip:** edit `index.html` and refresh the browser &mdash; that is the entire development loop.
+> **Tip:** edit the page and refresh the browser &mdash; that is the entire development loop.
 
 ---
 
@@ -146,7 +146,26 @@ python -m http.server 5173
 
 ```text
 Bharat-Infra-Associates/
-├── index.html               # Entire website: markup, styles, scripts, JSON-LD
+├── index.html               # Homepage: markup, styles, scripts, JSON-LD
+├── about.html               # Company background
+├── business-areas.html      # Service overview
+├── projects.html            # Project experience (Bihar & Jharkhand)
+├── gallery.html             # 24 site photographs + lightbox
+├── contact.html             # Enquiry form
+├── culture.html             # Project working approach
+├── news.html                # Verified company history
+├── solar-epc-contractor.html
+├── telecom-infrastructure.html
+├── civil-works.html
+├── erection-services.html
+├── electrical-ac-dc.html
+├── om-asset-management.html # Six service landing pages
+├── case-study-template.html # UNPUBLISHED skeleton (noindex, not in sitemap)
+├── seo-pages.css            # Shared styles for the non-homepage pages
+├── seo-pages.js             # Shared footer-year script
+├── analytics.js             # Single GA4 loader + event layer (ID not yet set)
+├── enquiry.js               # Contact-form controller (access key not yet set)
+├── EVIDENCE-REQUIRED.md     # Claims blocked pending client evidence
 ├── site.webmanifest         # PWA manifest (name, colours, icons)
 ├── robots.txt               # Crawler rules
 ├── sitemap.xml              # URL list for search engines

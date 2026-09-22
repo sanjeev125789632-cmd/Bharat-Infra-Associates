@@ -1,1 +1,2 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+var biaYear = document.getElementById('year');
+if (biaYear) biaYear.textContent = new Date().getFullYear();
