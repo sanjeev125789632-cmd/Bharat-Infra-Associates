@@ -1,6 +1,28 @@
 {
   "redirects": [
     {
+      "source": "/projects-bihar.html",
+      "has": [{ "type": "host", "value": "bharatinfrassociate.com" }],
+      "destination": "https://www.bharatinfrassociate.com/projects.html",
+      "permanent": true
+    },
+    {
+      "source": "/projects-jharkhand.html",
+      "has": [{ "type": "host", "value": "bharatinfrassociate.com" }],
+      "destination": "https://www.bharatinfrassociate.com/projects.html",
+      "permanent": true
+    },
+    {
+      "source": "/projects-bihar.html",
+      "destination": "/projects.html",
+      "permanent": true
+    },
+    {
+      "source": "/projects-jharkhand.html",
+      "destination": "/projects.html",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "bharatinfrassociate.com" }],
       "destination": "https://www.bharatinfrassociate.com/$1",

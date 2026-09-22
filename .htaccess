@@ -1,6 +1,13 @@
 RewriteEngine On
 
-# Force the canonical HTTPS + www host.
+# Retired location pages. Matched before the host rule so a request to a
+# non-canonical host still reaches the final URL in a single hop.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.bharatinfrassociate\.com$ [NC]
+RewriteRule ^projects-(bihar|jharkhand)\.html$ https://www.bharatinfrassociate.com/projects.html [R=301,L]
+RewriteRule ^projects-(bihar|jharkhand)\.html$ /projects.html [R=301,L]
+
+# Force the canonical HTTPS + www host, preserving the requested path.
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^www\.bharatinfrassociate\.com$ [NC]
 RewriteRule ^ https://www.bharatinfrassociate.com%{REQUEST_URI} [R=301,L]

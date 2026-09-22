@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Case Study Template (unpublished) | Bharat Infra Associate</title>
+
+<!-- This file is a STRUCTURE, not a case study. It carries no project data.
+     It is excluded from sitemap.xml, disallowed in robots.txt and served
+     noindex,nofollow so it cannot be indexed or linked into the live site.
+
+     TO PUBLISH A REAL CASE STUDY:
+       1. Copy this file to a new slug, e.g. /project-<type>-<state>.html
+       2. Fill EVERY {{...}} marker from approved evidence. See
+          EVIDENCE-REQUIRED.md for what counts as evidence for each field.
+       3. Delete any section whose evidence does not exist. Do NOT publish a
+          section with a marker still in it, and do NOT estimate a value.
+       4. Only then: remove the noindex below, add the page to sitemap.xml,
+          drop its Disallow line from robots.txt, and link it from
+          /projects.html and the matching service page.
+       5. Structured data: a Project/CreativeWork node may be added ONLY once
+          every field it would carry is evidenced. Review and AggregateRating
+          markup must never be added — no review evidence exists.
+          This template deliberately ships with page schema only. -->
+
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="/seo-pages.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr"><div class="wrap hdr__in">
+  <a class="brand" href="/"><img src="/icon-192.png" width="192" height="192" fetchpriority="high" decoding="async" alt="Bharat Infra Associate"><span><strong>Bharat Infra Associate</strong><small>Solar, Telecom, Civil and Electrical Project Work</small></span></a>
+  <nav class="nav" aria-label="Primary"><a href="/about.html">About Us</a><a href="/projects.html">Projects</a><a href="/business-areas.html">Business Areas</a><a href="/news.html">News</a><a href="/culture.html">Culture</a><a href="/gallery.html">Gallery</a><a href="/contact.html">Contact</a></nav>
+</div></header>
+
+<main id="main">
+<section class="hero"><div class="wrap">
+  <div class="crumbs"><a href="/">Home</a> / <a href="/projects.html">Projects</a> / {{PROJECT_TITLE}}</div>
+  <p class="eyebrow">{{PROJECT_TYPE}} · {{STATE}}</p>
+  <h1>{{PROJECT_TITLE}}</h1>
+  <p class="hero__lead">{{ONE_SENTENCE_SUMMARY — what was contracted, where, and over what period. No superlatives.}}</p>
+</div></section>
+
+<section class="content"><div class="wrap layout"><article>
+
+  <h2>Project at a glance</h2>
+  <!-- Every row below needs a documentary source. Delete a row rather than
+       leaving it blank or approximating it. -->
+  <ul>
+    <li><strong>Project type:</strong> {{PROJECT_TYPE — solar EPC, telecom, civil, erection, AC/DC electrical, or O&amp;M}}</li>
+    <li><strong>State and district:</strong> {{STATE}}, {{DISTRICT}}</li>
+    <li><strong>Client disclosure:</strong> {{NAMED_WITH_WRITTEN_PERMISSION | DESCRIBED_GENERICALLY | NOT_DISCLOSED}}</li>
+    <li><strong>Engagement:</strong> {{DIRECT_CONTRACTOR | SUBCONTRACTOR_TO — name only if permission was given}}</li>
+    <li><strong>Contracted scope:</strong> {{SCOPE_AS_WRITTEN_IN_THE_WORK_ORDER}}</li>
+    <li><strong>Measurable quantity:</strong> {{CAPACITY_OR_QUANTITY with unit — MWp, number of foundations, km of trench, number of towers}}</li>
+    <li><strong>Period:</strong> {{START_MONTH_YEAR}} to {{COMPLETION_MONTH_YEAR}}</li>
+  </ul>
+
+  <h2>Site conditions</h2>
+  <p>{{SITE_CONDITIONS — terrain, soil, access, weather window, live-site constraints. Only what was recorded at the time.}}</p>
+
+  <h2>Work performed</h2>
+  <p>{{WORK_PERFORMED — the activities actually carried out under this contract, in sequence. Distinguish work done by this company from work done by others on the same site.}}</p>
+
+  <h2>Inspection and testing records</h2>
+  <p>{{INSPECTION_AND_TESTING — which inspections were held, which tests were run, who witnessed them, and what format the records took. Name a test only if a record of it exists.}}</p>
+
+  <h2>Handover</h2>
+  <p>{{HANDOVER_SCOPE — what was handed over, to whom, with which documents, and what remained with other parties.}}</p>
+
+  <h2>Result</h2>
+  <p>{{APPROVED_RESULT — the outcome as the client has agreed it may be stated in public. No performance figure, availability percentage or energy yield unless it is in an approved document.}}</p>
+
+  <h2>Site photographs</h2>
+  <!-- Original photographs only. No stock, no AI-generated imagery, no images
+       from another company's project. Each needs width/height and a caption
+       limited to what is visible in the frame. -->
+  <figure>
+    <img src="{{IMAGE_FILE}}" width="{{WIDTH}}" height="{{HEIGHT}}" loading="lazy" decoding="async" alt="{{ALT_TEXT — describe only what is visible}}">
+    <figcaption>{{CAPTION — visible work only. Do not infer client, capacity or date from the image.}}</figcaption>
+  </figure>
+
+  <h2>Related services</h2>
+  <p>{{Link only the service pages whose scope this project actually covered, using descriptive anchor text.}}</p>
+
+  <div class="cta">
+    <h2>Discuss a similar requirement</h2>
+    <p>Send the project location, drawings or quantities available, required service and expected start period.</p>
+    <a class="button" href="/contact.html" data-quote-cta data-cta="case_study_cta">Send a project enquiry</a>
+  </div>
+
+</article>
+<aside class="aside">
+  <h2>Services</h2>
+  <div class="aside__rel"><a href="/solar-epc-contractor.html">Solar EPC</a><a href="/telecom-infrastructure.html">Telecom infrastructure</a><a href="/civil-works.html">Civil works</a><a href="/erection-services.html">Erection services</a><a href="/electrical-ac-dc.html">AC/DC electrical works</a><a href="/om-asset-management.html">Asset management &amp; O&amp;M</a></div>
+  <h2>Explore</h2>
+  <a href="/projects.html">Projects</a><a href="/gallery.html">Gallery</a><a href="/contact.html">Contact</a>
+</aside>
+</div></section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__grid">
+    <div><strong>Bharat Infra Associate</strong><p>Solar EPC, telecom infrastructure, civil works, erection, AC/DC electrical works, asset management and O&amp;M.</p></div>
+    <div><p>B-49, 3rd Floor, Mehtab Complex, Joshi Colony, IP Extension, Delhi 110092, India</p><p><a href="tel:+919818742322">+91 98187 42322</a> · <a href="tel:+919818875208">+91 98188 75208</a></p><p><a href="mailto:procurement@bharatinfrassociate.com">procurement@bharatinfrassociate.com</a></p></div>
+  </div>
+  <div class="wrap"><small>© <span id="year">2026</span> Bharat Infra Associate.</small></div>
+</footer>
+<script src="/seo-pages.js"></script>
+</body>
+</html>

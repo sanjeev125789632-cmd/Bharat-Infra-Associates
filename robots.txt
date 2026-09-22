@@ -8,8 +8,14 @@ Allow: /
 
 # Repo files served from the web root by static hosting but not content.
 Disallow: /seo-verify.sh
+Disallow: /sitemap-generate.sh
 Disallow: /vercel.json
 Disallow: /.htaccess
 Disallow: /README.md
+Disallow: /EVIDENCE-REQUIRED.md
+
+# Unpublished internal template. It carries no real project data and must
+# not be indexed; it also serves noindex in a meta robots tag.
+Disallow: /case-study-template.html
 
 Sitemap: https://www.bharatinfrassociate.com/sitemap.xml
